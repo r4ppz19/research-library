@@ -65,6 +65,7 @@
   .login-page__intro {
     flex-basis: 50%;
     border-radius: 20px 0 0 20px;
+    justify-content: flex-start;
     padding: 48px;
   }
 
@@ -84,6 +85,8 @@
 
   .login-page__form-title {
     font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 30px;
   }
 
   .login-page__form {

@@ -1,4 +1,3 @@
-// src/components/forms/FormInput.jsx
 import React from "react";
 import "./FormInput.css";
 

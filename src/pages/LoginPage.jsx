@@ -1,4 +1,3 @@
-// src/pages/LoginPage.jsx
 import React, { useState } from "react";
 import "./LoginPage.css";
 import FormInput from "../components/forms/FormInput.jsx";
@@ -18,12 +17,16 @@ function LoginPage() {
 
   return (
     <div className="login-page">
+      {/* left/top part*/}
       <div className="login-page__intro">
-        <h1 className="login-page__intro-title">Research Library Admin</h1>
+        <h1 className="login-page__intro-title">Research Library</h1>
         <p className="login-page__intro-text">
-          Please sign in to manage your research collection
+          Sign in to manage your research library content and keep academic
+          resources organized with our intuitive admin dashboard.
         </p>
       </div>
+
+      {/* right/buttom part */}
       <div className="login-page__form-container">
         <h2 className="login-page__form-title">Admin Sign In</h2>
         <form className="login-page__form" onSubmit={handleSubmit}>

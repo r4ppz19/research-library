@@ -1,4 +1,3 @@
-// src/components/forms/FormCheckbox.jsx
 import React from "react";
 import "./FormCheckbox.css";
 
