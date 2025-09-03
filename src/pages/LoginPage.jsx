@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./LoginPage.css";
+import style from "./LoginPage.module.css";
 import FormInput from "../components/form/FormInput.jsx";
 import Button from "../components//button/Button.jsx";
 
@@ -14,20 +14,20 @@ function LoginPage() {
   };
 
   return (
-    <div className="loginContainer">
+    <div className={style.loginContainer}>
       {/* left/top part*/}
-      <div className="introContainer">
-        <h1 className="introTitle">Research Library</h1>
-        <p className="introText">
+      <div className={style.introContainer}>
+        <h1 className={style.introTitle}>Research Library</h1>
+        <p className={style.introText}>
           Sign in to manage your research library content and keep academic
           resources organized with our intuitive admin dashboard.
         </p>
       </div>
 
       {/* right/buttom part */}
-      <div className="formContainer">
-        <h2 className="formTitle">Admin Sign In</h2>
-        <form className="form" onSubmit={handleSubmit}>
+      <div className={style.formContainer}>
+        <h2 className={style.formTitle}>Admin Sign In</h2>
+        <form className={style.form} onSubmit={handleSubmit}>
           <FormInput
             label="Username"
             id="username"

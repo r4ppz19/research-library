@@ -40,17 +40,18 @@
 }
 
 .formTitle {
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 1.3rem;
+  font-weight: 700;
   color: #333;
   margin-bottom: 24px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
 /* Desktop Media Query */
@@ -68,7 +69,8 @@
     flex-basis: 50%;
     border-radius: 20px 0 0 20px;
     justify-content: flex-start;
-    padding: 48px;
+    padding: 60px 48px;
+    gap: 15px;
   }
 
   .introTitle {
@@ -88,7 +90,6 @@
   .formTitle {
     font-size: 1.5rem;
     text-align: center;
-    margin-bottom: 30px;
   }
 
   .form {
