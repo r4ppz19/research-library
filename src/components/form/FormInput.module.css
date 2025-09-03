@@ -1,16 +1,16 @@
-.form-group {
+.formGroup {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.form-group__label {
+.label {
   font-size: 0.875rem;
   color: #555;
   font-weight: 500;
 }
 
-.form-group__input {
+.input {
   padding: 10px 12px;
   border: 1px solid #ccc;
   border-radius: 6px;

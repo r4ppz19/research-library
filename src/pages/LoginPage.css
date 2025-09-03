@@ -1,4 +1,4 @@
-.login-page {
+.loginContainer {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -6,7 +6,7 @@
   width: 100%;
 }
 
-.login-page__intro {
+.introContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,43 +17,45 @@
   text-align: center;
 }
 
-.login-page__intro-title {
+.introTitle {
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 8px;
 }
 
-.login-page__intro-text {
+.introText {
   font-size: 1rem;
 }
 
-.login-page__form-container {
+.formContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   flex-grow: 1;
   padding: 24px;
   background-color: #fff;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
+  gap: 20px;
 }
 
-.login-page__form-title {
+.formTitle {
   font-size: 1.25rem;
   font-weight: bold;
   color: #333;
   margin-bottom: 24px;
+  text-align: center;
 }
 
-.login-page__form {
+.form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
 /* Desktop Media Query */
 @media (min-width: 640px) {
-  .login-page {
+  .loginContainer {
     flex-direction: row;
     max-width: 900px;
     height: 500px;
@@ -62,34 +64,34 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }
 
-  .login-page__intro {
+  .introContainer {
     flex-basis: 50%;
     border-radius: 20px 0 0 20px;
     justify-content: flex-start;
     padding: 48px;
   }
 
-  .login-page__intro-title {
+  .introTitle {
     font-size: 2rem;
   }
 
-  .login-page__intro-text {
+  .introText {
     font-size: 1rem;
   }
 
-  .login-page__form-container {
+  .formContainer {
     flex-basis: 50%;
     border-radius: 0 20px 20px 0;
     padding: 48px;
   }
 
-  .login-page__form-title {
+  .formTitle {
     font-size: 1.5rem;
     text-align: center;
     margin-bottom: 30px;
   }
 
-  .login-page__form {
+  .form {
     gap: 24px;
   }
 }

@@ -1,16 +1,16 @@
 import React from "react";
-import "./FormInput.css";
+import style from "./FormInput.module.css";
 
 function FormInput({ label, id, type, placeholder, value, onChange }) {
   return (
-    <div className="form-group">
-      <label className="form-group__label" htmlFor={id}>
+    <div className={style.formGroup}>
+      <label className={style.label} htmlFor={id}>
         {label}
       </label>
       <input
         type={type}
         id={id}
-        className="form-group__input"
+        className={style.input}
         placeholder={placeholder}
         value={value}
         onChange={onChange}

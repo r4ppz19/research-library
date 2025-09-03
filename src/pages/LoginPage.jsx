@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import "./LoginPage.css";
-import FormInput from "../components/forms/FormInput.jsx";
-import FormCheckbox from "../components/forms/FormCheckBox.jsx";
-import Button from "../components/buttons/Button.jsx";
+import FormInput from "../components/form/FormInput.jsx";
+import Button from "../components//button/Button.jsx";
 
 function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,20 +14,20 @@ function LoginPage() {
   };
 
   return (
-    <div className="login-page">
+    <div className="loginContainer">
       {/* left/top part*/}
-      <div className="login-page__intro">
-        <h1 className="login-page__intro-title">Research Library</h1>
-        <p className="login-page__intro-text">
+      <div className="introContainer">
+        <h1 className="introTitle">Research Library</h1>
+        <p className="introText">
           Sign in to manage your research library content and keep academic
           resources organized with our intuitive admin dashboard.
         </p>
       </div>
 
       {/* right/buttom part */}
-      <div className="login-page__form-container">
-        <h2 className="login-page__form-title">Admin Sign In</h2>
-        <form className="login-page__form" onSubmit={handleSubmit}>
+      <div className="formContainer">
+        <h2 className="formTitle">Admin Sign In</h2>
+        <form className="form" onSubmit={handleSubmit}>
           <FormInput
             label="Username"
             id="username"
@@ -45,12 +43,6 @@ function LoginPage() {
             placeholder="Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          />
-          <FormCheckbox
-            label="Remember me for 30 days"
-            id="rememberMe"
-            checked={rememberMe}
-            onChange={(e) => setRememberMe(e.target.checked)}
           />
           <Button onClick={handleSubmit}>Sign in</Button>
         </form>

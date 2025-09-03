@@ -1,14 +1,14 @@
-body {
+/* Reset */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
-  background-color: #f3f4f6;
 }
 
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+html,
+body,
+#root {
+  height: 100%;
+  background-color: #f3f4f6;
 }
