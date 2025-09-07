@@ -1,4 +1,5 @@
 :root {
+  /* Colors */
   --color-primary: #1b1551; /* ACD color */
   --color-primary-hover: #2a236f;
   --color-primary-pressed: #130f3a;
@@ -10,19 +11,20 @@
 
   --color-background: #f8f9fa;
   --color-surface: #fefefe; /* ACD color */
+  --color-muted: #dfdfe1;
 
   --color-text: #111111;
-  --color-text-muted: #555555;
   --color-text-on-dark: #fefefe;
 
   /* Font families */
-  --font-family-base: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-family-base: "Helvetica Neue", "Inter", Arial, sans-serif;
 
   /* Font weights */
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 
+  /* Font Sizes */
   --font-size-body: 1rem; /* 16px */
   --font-size-small: 0.875rem; /* 14px */
   --font-size-caption: 0.75rem; /* 12px */
@@ -38,6 +40,12 @@
   --line-height-heading: 1.2;
   --line-height-subheading: 1.3;
   --line-height-body: 1.5;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+  --shadow-card: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
 *,
@@ -112,7 +120,22 @@ ol {
   margin: 0;
 }
 
-a {
-  color: inherit;
+.a {
+  color: var(--color-accent);
   text-decoration: none;
+}
+
+.a:hover {
+  color: var(--color-accent-focus);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent-focus);
+}
+
+.a:focus-visible {
+  outline: 2px solid var(--color-accent-focus);
+  outline-offset: 2px;
+}
+
+.a:active {
+  color: #1c7fb5;
 }
