@@ -1,6 +1,6 @@
 import style from "./TextField.module.css";
 
-function Input({ label, value, type = "text", placeholder, onChange, id }) {
+function TextField({ label, value, placeholder, onChange, id }) {
   return (
     <div className={style.inputGroup}>
       <label className={style.label} htmlFor={id}>
@@ -9,7 +9,7 @@ function Input({ label, value, type = "text", placeholder, onChange, id }) {
       <input
         className={style.input}
         id={id}
-        type={type}
+        type="text"
         value={value}
         onChange={onChange}
         placeholder={placeholder}
@@ -18,4 +18,4 @@ function Input({ label, value, type = "text", placeholder, onChange, id }) {
   );
 }
 
-export default Input;
+export default TextField;

@@ -1,9 +1,9 @@
 import { useState } from "react";
-import style from "./Form.module.css";
-import Input from "./TextField";
+import style from "./LoginForm.module.css";
+import TextField from "./TextField";
 import Button from "../button/Button";
 
-function Form() {
+function LoginForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -13,19 +13,17 @@ function Form() {
 
   return (
     <form onSubmit={handleSubmit} className={style.form}>
-      <Input
+      <TextField
         label="Username"
         placeholder="Enter username"
         id="username"
-        type="text"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
-      <Input
+      <TextField
         label="Password"
         placeholder="Enter password"
         id="password"
-        type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
@@ -34,4 +32,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default LoginForm;

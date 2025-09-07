@@ -1,5 +1,5 @@
 import style from "./LoginPage.module.css";
-import Form from "../../components/form/Form";
+import LoginForm from "../../components/form/LoginForm";
 import SchoolLogo from "../../assets/school-logo.svg";
 
 function LoginPage() {
@@ -19,7 +19,7 @@ function LoginPage() {
           <p className={style.text}>
             Enter your credentials to access the admin dashboard
           </p>
-          <Form />
+          <LoginForm />
           <p className={style.redirect}>
             Are you a student?{" "}
             <a className={style.loginLink} href="#">
