@@ -16,19 +16,29 @@
 .introCard {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
   background: var(--color-primary);
   flex: 1;
-  padding: 30px;
+  padding: 30px 50px;
   border-radius: 0px 0px 15px 15px;
+  gap: 25px;
+}
+
+.logo {
+  width: 170px;
+  height: auto;
 }
 
 .title {
-  font-size: var(--font-size-h2);
+  font-size: var(--font-size-h3);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-on-dark);
+}
+
+.description {
+  display: none;
 }
 
 .formCard {
@@ -99,14 +109,36 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    text-align: center;
     background: var(--color-primary);
     border-radius: 15px 0px 0px 15px;
     border: 0.5px solid var(--color-border);
     border-right: none;
-    padding: 40px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .logo {
+    width: 190px;
+    height: auto;
+  }
+
+  .title,
+  .description {
+    align-self: flex-start;
+    text-align: left;
+    width: 100%;
+    white-space: normal;
+    overflow: visible;
+  }
+
+  .description {
+    display: block;
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-text-on-dark);
+    flex-shrink: 0;
+    text-align: left;
   }
 
   .formCard {
