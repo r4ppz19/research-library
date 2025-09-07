@@ -4,4 +4,33 @@
   align-items: stretch;
   min-height: 100vh;
   background-color: var(--color-background);
+  padding: 100px 30px;
+  gap: 20px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  gap: 10px;
+}
+
+.header {
+  color: var(--color-text);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+}
+
+.subHeader {
+  color: var(--color-text);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
