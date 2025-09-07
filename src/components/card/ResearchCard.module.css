@@ -1,0 +1,51 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 0.2px solid var(--color-border);
+  border-radius: 20px;
+  background-color: var(--color-surface);
+  padding: 20px;
+  gap: 15px;
+  flex: 1 1 calc(33.333% - 13.33px); /* even cards */
+  box-shadow: var(--shadow-card);
+}
+
+.title {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.autho,
+.date {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+}
+
+.departmentContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+  background-color: var(--color-muted);
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+
+.department {
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text);
+}
+
+.abstract {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text);
+}

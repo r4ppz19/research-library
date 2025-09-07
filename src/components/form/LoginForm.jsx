@@ -4,6 +4,7 @@ import { User, Lock } from "lucide-react";
 import style from "./LoginForm.module.css";
 import TextField from "./TextField";
 import Button from "../button/Button";
+import { LogIn } from "lucide-react";
 
 function LoginForm() {
   const [username, setUsername] = useState("");
@@ -24,6 +25,7 @@ function LoginForm() {
         id="username"
         value={username}
         icon={<User size={16} />}
+        padding="10px 10px"
         onChange={(e) => setUsername(e.target.value)}
       />
       <TextField
@@ -35,7 +37,9 @@ function LoginForm() {
         icon={<Lock size={16} />}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <Button type="submit">Sign in</Button>
+      <Button type="submit" icon={<LogIn size={20} />}>
+        Sign in
+      </Button>
     </form>
   );
 }

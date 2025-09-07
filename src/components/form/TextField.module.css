@@ -7,19 +7,22 @@
 .inputWrapper {
   display: flex;
   align-items: center;
-  border: solid 0.8px var(--color-border);
   border-radius: 10px;
-  background-color: var(--color-surface);
   width: 100%;
   gap: 8px;
-  padding: 0 10px;
+  border: solid 0.8px var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.inputWrapper:focus-within {
+  outline: 1px solid var(--color-accent-focus);
 }
 
 .label {
-  font-size: var(--font-size-body);
   display: flex;
   align-items: center;
   gap: 8px;
+  font-size: var(--font-size-body);
 }
 
 .withIcon {
@@ -37,8 +40,8 @@
   flex: 1;
   border: none;
   background: transparent;
-  padding: 10px 0;
   width: 100%;
+  padding: 8px 0px;
   font-size: var(--font-size-body);
 }
 

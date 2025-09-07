@@ -1,12 +1,11 @@
 import style from "./Button.module.css";
-import { LogIn } from "lucide-react";
 
 function Button({
   type = "button",
   onClick,
   children,
   variant = "primary",
-  icon: Icon = LogIn,
+  icon,
   padding,
 }) {
   return (
@@ -16,7 +15,7 @@ function Button({
       style={{ padding }}
       onClick={onClick}
     >
-      {Icon && <Icon size={20} className={style.icon} />}
+      {icon && icon}
       {children}
     </button>
   );

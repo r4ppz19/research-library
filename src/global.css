@@ -1,4 +1,5 @@
 :root {
+  /* Colors */
   --color-primary: #1b1551; /* ACD color */
   --color-primary-hover: #2a236f;
   --color-primary-pressed: #130f3a;
@@ -10,19 +11,20 @@
 
   --color-background: #f8f9fa;
   --color-surface: #fefefe; /* ACD color */
+  --color-muted: #dfdfe1;
 
   --color-text: #111111;
-  --color-text-muted: #555555;
   --color-text-on-dark: #fefefe;
 
   /* Font families */
-  --font-family-base: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-family-base: "Helvetica Neue", "Inter", Arial, sans-serif;
 
   /* Font weights */
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 
+  /* Font Sizes */
   --font-size-body: 1rem; /* 16px */
   --font-size-small: 0.875rem; /* 14px */
   --font-size-caption: 0.75rem; /* 12px */
