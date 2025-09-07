@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import style from "./LoginForm.module.css";
 import TextField from "./TextField";
 import Button from "../button/Button";
@@ -6,9 +7,11 @@ import Button from "../button/Button";
 function LoginForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    navigate("/homepage");
   };
 
   return (
