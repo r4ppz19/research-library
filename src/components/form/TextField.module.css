@@ -10,6 +10,7 @@
   border-radius: 10px;
   width: 100%;
   gap: 8px;
+  padding: 0px 10px;
   border: solid 0.8px var(--color-border);
   background-color: var(--color-surface);
 }
@@ -22,7 +23,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: var(--font-size-body);
+  font-size: var(--font-size-small);
 }
 
 .withIcon {
@@ -41,8 +42,8 @@
   border: none;
   background: transparent;
   width: 100%;
-  padding: 8px 0px;
-  font-size: var(--font-size-body);
+  padding: 10px 0px;
+  font-size: var(--font-size-small);
 }
 
 .input:focus {

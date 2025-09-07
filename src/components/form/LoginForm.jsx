@@ -25,7 +25,6 @@ function LoginForm() {
         id="username"
         value={username}
         icon={<User size={16} />}
-        padding="10px 10px"
         onChange={(e) => setUsername(e.target.value)}
       />
       <TextField

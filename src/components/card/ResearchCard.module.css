@@ -22,7 +22,7 @@
   justify-content: space-between;
 }
 
-.autho,
+.author,
 .date {
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-regular);
