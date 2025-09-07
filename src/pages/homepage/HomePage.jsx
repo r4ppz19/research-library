@@ -1,7 +1,8 @@
 import { useState } from "react";
 import style from "./HomePage.module.css";
 import Header from "../../components/header/Header";
-import SearchTextField from "../../components/search/SearchTextField";
+import TextField from "../../components/form/TextField";
+import { Search } from "lucide-react";
 
 function HomePage() {
   const [search, setSearch] = useState("");
@@ -25,13 +26,13 @@ function HomePage() {
         </p>
       </section>
       <section className={style.searchContainer}>
-        <SearchTextField
-          id={"search"}
+        <TextField
           value={search}
           onChange={(e) => {
             setSearch(e.target.value);
           }}
           placeholder={"Search research paper"}
+          icon={<Search size={20} />}
         />
       </section>
     </main>
