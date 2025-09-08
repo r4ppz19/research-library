@@ -1,7 +1,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  border: 0.2px solid var(--color-border);
+  border: 0.2px solid var(--border-default);
   border-radius: 20px;
   background-color: var(--color-surface);
   padding: 20px;
@@ -22,7 +22,7 @@
   justify-content: space-between;
 }
 
-.autho,
+.author,
 .date {
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-regular);
@@ -33,7 +33,7 @@
   flex-direction: row;
   align-items: center;
   width: fit-content;
-  background-color: var(--color-muted);
+  background-color: var(--gray-300);
   padding: 3px 10px;
   border-radius: 10px;
 }

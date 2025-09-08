@@ -9,7 +9,7 @@ function ResearchCard() {
         Quantum Computing Applications in Cryptography
       </h1>
       <div className={style.infoContainer}>
-        <p className={style.author}>by Dr. Eleanor Chen</p>
+        <p className={style.author}>By Dr. Eleanor Chen</p>
         <p className={style.date}>March 22, 2023</p>
       </div>
       <div className={style.departmentContainer}>

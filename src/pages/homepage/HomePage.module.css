@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: stretch;
   min-height: 100vh;
-  background-color: var(--color-background);
+  background-color: var(--color-bg);
   padding: 100px 20px;
   gap: 20px;
 }
@@ -34,6 +34,16 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  gap: 5px;
+}
+
+.textField {
+  flex: 2;
+}
+
+.allDepartmentsButton,
+.allYearButton {
+  flex: 1;
 }
 
 .researchContainer {

@@ -3,13 +3,13 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--border-default);
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1001;
-  background-color: var(--color-background);
+  background-color: var(--color-bg);
 }
 
 .titleContainer {
@@ -25,7 +25,7 @@
 }
 
 .logo {
-  width: 40px;
+  width: 45px;
   height: auto;
 }
 
@@ -45,6 +45,10 @@
   outline: 0px;
 }
 
+.accountButton {
+  display: none;
+}
+
 .dropdownMenu {
   display: flex;
   flex-direction: column;
@@ -53,12 +57,49 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: var(--color-background);
-  border-bottom: 1px solid var(--color-border);
-  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--border-default);
+  border-top: 1px solid var(--border-default);
   padding: 10px 10px;
   z-index: 1000;
   color: var(--color-text);
   font-size: var(--font-size-body);
   padding: 10px 20px;
+}
+
+@media (min-width: 768px) {
+  .menuButton {
+    display: none;
+  }
+
+  .dropdownMenu {
+    display: none;
+  }
+
+  .accountButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    border-radius: 7px;
+    border: 0.5px solid var(--border-default);
+    padding: 5px 10px;
+    background: var(--btn-dark-bg);
+    color: var(--btn-dark-text);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-medium);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .accountButton:hover {
+    background: var(--btn-dark-hover);
+  }
+
+  .accountButton:active {
+    background-color: var(--btn-dark-active);
+  }
+
+  .accountButton:focus {
+    outline: 1px solid var(--btn-dark-outline);
+  }
 }
