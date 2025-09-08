@@ -34,6 +34,16 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  gap: 5px;
+}
+
+.textField {
+  flex: 2;
+}
+
+.allDepartmentsButton,
+.allYearButton {
+  flex: 1;
 }
 
 .researchContainer {

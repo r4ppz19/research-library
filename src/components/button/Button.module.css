@@ -4,20 +4,24 @@
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
-  width: 100%;
   border-radius: 10px;
+  gap: 10px;
   background: var(--btn-dark-bg);
   border: solid 0.5px var(--border-default);
   color: var(--btn-dark-text);
   font-size: var(--font-size-body);
-  gap: 10px;
+  font-weight: var(--font-weight-medium);
+  box-shadow: var(--shadow-sm);
 }
+
 .button:hover {
   background-color: var(--btn-dark-hover);
 }
+
 .button:active {
   background-color: var(--btn-dark-active);
 }
+
 .button:focus {
   outline: 1px solid var(--btn-dark-outline);
 }
@@ -27,12 +31,15 @@
   background: var(--btn-light-bg);
   color: var(--btn-light-text);
 }
+
 .secondary:hover {
   background: var(--btn-light-hover);
 }
+
 .secondary:active {
   background: var(--btn-light-active);
 }
+
 .secondary:focus {
   outline: 1px solid var(--btn-light-outline);
 }

@@ -11,6 +11,12 @@
   flex-direction: column;
 }
 
+.labelGroup {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
 .label {
   font-size: var(--font-size-small);
 }

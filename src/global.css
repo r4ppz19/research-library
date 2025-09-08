@@ -15,7 +15,7 @@
 
   /* ================= Backgrounds ================= */
   --color-bg: var(--gray-100);
-  --color-surface: var(--color-light);
+  --color-surface: var(--gray-100);
   --color-surface-alt: var(--gray-200);
 
   /* ================= Text ================= */

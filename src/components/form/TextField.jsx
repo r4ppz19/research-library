@@ -6,14 +6,12 @@ function TextField({
   onChange,
   placeholder,
   icon,
-  padding,
   type = "text",
+  className = "",
+  ...props
 }) {
   return (
-    <div
-      className={style.inputWrapper}
-      style={padding ? { padding } : undefined}
-    >
+    <div className={`${style.inputWrapper} ${className || ""}`}>
       {icon && <span className={style.icon}>{icon}</span>}
       <input
         className={style.input}
@@ -22,9 +20,11 @@ function TextField({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        {...props}
       />
     </div>
   );
 }
 
 export default TextField;
+

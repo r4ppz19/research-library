@@ -19,7 +19,10 @@ function LoginForm() {
   return (
     <form onSubmit={handleSubmit} className={style.form}>
       <div className={style.inputGroup}>
-        <label className={style.label} for="username">Username</label>
+        <div className={style.labelGroup}>
+          <User size={16} />
+          <label className={style.label} for="username">Username</label>
+        </div>
         <TextField
           type="text"
           label="Username"
@@ -30,7 +33,10 @@ function LoginForm() {
         />
       </div>
       <div className={style.inputGroup}>
-        <label className={style.label} for="password">Username</label>
+        <div className={style.labelGroup}>
+          <Lock size={16} />
+          <label className={style.label} for="password">Username</label>
+        </div>
         <TextField
           type="password"
           label="Password"
