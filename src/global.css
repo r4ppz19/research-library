@@ -1,51 +1,104 @@
 :root {
-  /* Colors */
-  --color-primary: #1b1551; /* ACD color */
-  --color-primary-hover: #2a236f;
-  --color-primary-pressed: #130f3a;
+  /* =============== ACD Brand Colors ================ */
+  --color-primary: #1b1551;
+  --color-primary-contrast: #fefefe;
+  --color-secondary: #2ea8e4;
+  --color-secondary-contrast: #fefefe;
 
-  --color-border: #2a236f;
+  /* =============== IDK ================ */
 
-  --color-accent: #2ea8e4; /* ACD color */
+  --color-light: #fefefe;
+  --color-light-contrast: #1b1551;
+
+  --color-accent: var(--color-secondary);
   --color-accent-focus: #5ec6f2;
 
-  --color-background: #f8f9fa;
-  --color-surface: #fefefe; /* ACD color */
-  --color-muted: #dfdfe1;
+  /* ================= Backgrounds ================= */
+  --color-bg: var(--gray-100);
+  --color-surface: var(--color-light);
+  --color-surface-alt: var(--gray-200);
 
-  --color-text: #111111;
-  --color-text-on-dark: #fefefe;
+  /* ================= Text ================= */
+  --color-text: var(--gray-700);
+  --color-text-muted: var(--gray-600);
+  --color-text-invert: var(--color-light);
 
-  /* Font families */
-  --font-family-base: "Helvetica Neue", "Inter", Arial, sans-serif;
+  /* ================= Gray Scale ================= */
+  --gray-100: #f9f9f9;
+  --gray-200: #f2f2f2;
+  --gray-300: #e5e5e5;
+  --gray-400: #cccccc;
+  --gray-500: #999999;
+  --gray-600: #666666;
+  --gray-700: #333333;
+  --gray-800: #1a1a1a;
+  --gray-900: #0d0d0d;
 
-  /* Font weights */
+  /* ================= Buttons ================= */
+  /* Dark button */
+  --btn-dark-bg: var(--color-primary);
+  --btn-dark-text: var(--color-primary-contrast);
+  --btn-dark-hover: #241a64;
+  --btn-dark-active: #150f42;
+  --btn-dark-outline: var(--color-primary-contrast);
+
+  /* Light button */
+  --btn-light-bg: var(--color-light);
+  --btn-light-text: var(--color-light-contrast);
+  --btn-light-hover: var(--gray-200);
+  --btn-light-active: var(--gray-300);
+  --btn-light-outline: var(--color-primary);
+
+  /* ================= Borders ================= */
+  --border-default: var(--gray-400);
+  --border-hover: var(--color-secondary);
+  --border-focus: var(--color-secondary);
+  --border-active: var(--color-primary);
+
+  /* ================= Inputs ================= */
+  --input-bg: var(--gray-100);
+  --input-text: var(--gray-700);
+  --input-border: var(--gray-400);
+  --input-hover-border: var(--color-secondary);
+  --input-focus-border: var(--color-secondary);
+  --input-focus-ring: rgba(46, 168, 228, 0.5);
+  --input-active-border: var(--color-primary);
+  --input-disabled-bg: var(--gray-200);
+  --input-disabled-text: var(--gray-500);
+
+  /* ================= Feedback ================= */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+
+  /* ================= Shadows ================= */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+  /* ================= Typography ================= */
+  --font-family-base: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
+  --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  /* Font Sizes */
-  --font-size-body: 1rem; /* 16px */
-  --font-size-small: 0.875rem; /* 14px */
-  --font-size-caption: 0.75rem; /* 12px */
+  --font-size-body: 1rem;
+  --font-size-small: 0.875rem;
+  --font-size-caption: 0.75rem;
 
-  --font-size-h1: 2.25rem; /* 36px */
-  --font-size-h2: 1.875rem; /* 30px */
-  --font-size-h3: 1.5rem; /* 24px */
-  --font-size-h4: 1.25rem; /* 20px */
-  --font-size-h5: 1.125rem; /* 18px */
-  --font-size-h6: 1rem; /* 16px */
+  --font-size-h1: 2.441rem;
+  --font-size-h2: 1.953rem;
+  --font-size-h3: 1.563rem;
+  --font-size-h4: 1.25rem;
+  --font-size-h5: 1.125rem;
+  --font-size-h6: 1rem;
 
-  /* Line heights */
   --line-height-heading: 1.2;
   --line-height-subheading: 1.3;
   --line-height-body: 1.5;
-
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
-  --shadow-card: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
 *,
@@ -137,5 +190,5 @@ ol {
 }
 
 .a:active {
-  color: #1c7fb5;
+  color: var(--color-light-contrast);
 }

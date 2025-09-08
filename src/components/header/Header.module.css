@@ -3,13 +3,13 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--border-default);
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1001;
-  background-color: var(--color-background);
+  background-color: var(--color-bg);
 }
 
 .titleContainer {
@@ -53,9 +53,9 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: var(--color-background);
-  border-bottom: 1px solid var(--color-border);
-  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--border-default);
+  border-top: 1px solid var(--border-default);
   padding: 10px 10px;
   z-index: 1000;
   color: var(--color-text);

@@ -1,3 +1,4 @@
+/* Dark button */
 .button {
   display: flex;
   align-items: center;
@@ -5,34 +6,33 @@
   padding: 10px 20px;
   width: 100%;
   border-radius: 10px;
-  background: var(--color-primary);
-  border: solid 0.5px var(--color-border);
-  color: var(--color-text-on-dark);
+  background: var(--btn-dark-bg);
+  border: solid 0.5px var(--border-default);
+  color: var(--btn-dark-text);
   font-size: var(--font-size-body);
   gap: 10px;
 }
-
 .button:hover {
-  background-color: var(--color-primary-hover);
+  background-color: var(--btn-dark-hover);
 }
-
 .button:active {
-  background-color: var(--color-primary-pressed);
+  background-color: var(--btn-dark-active);
 }
-
 .button:focus {
-  outline: 1px solid var(--color-accent-focus);
+  outline: 1px solid var(--btn-dark-outline);
 }
 
-.light {
-  background: var(--color-surface);
-  color: var(--color-text);
+/* Light button */
+.secondary {
+  background: var(--btn-light-bg);
+  color: var(--btn-light-text);
 }
-
-.light:hover {
-  background: var(--color-background);
+.secondary:hover {
+  background: var(--btn-light-hover);
 }
-
-.light:active {
-  background: var(--color-surface);
+.secondary:active {
+  background: var(--btn-light-active);
+}
+.secondary:focus {
+  outline: 1px solid var(--btn-light-outline);
 }
