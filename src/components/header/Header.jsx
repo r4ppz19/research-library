@@ -1,7 +1,7 @@
 import style from "./Header.module.css";
 import { Menu, X, CircleUser } from "lucide-react";
 import SchoolLogo from "../../assets/school-logo.svg";
-import Button from "../button/Button"
+import Button from "../button/Button";
 
 function Header({ menuOpen, toggleMenu }) {
   return (
@@ -11,7 +11,10 @@ function Header({ menuOpen, toggleMenu }) {
         <h1 className={style.title}>ACD Research Library</h1>
       </div>
 
-      <button className={style.accountButton} type="buttom"><CircleUser size={16} />Account</button>
+      <Button className={style.accountButton}>
+        <CircleUser size={16} />
+        Account
+      </Button>
 
       <button className={style.menuButton} onClick={toggleMenu}>
         {menuOpen ? <X size={20} /> : <Menu size={20} />}

@@ -79,27 +79,11 @@
   .accountButton {
     display: flex;
     flex-direction: row;
-    align-items: center;
     gap: 5px;
     border-radius: 7px;
     border: 0.5px solid var(--border-default);
     padding: 5px 10px;
-    background: var(--btn-dark-bg);
-    color: var(--btn-dark-text);
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-medium);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .accountButton:hover {
-    background: var(--btn-dark-hover);
-  }
-
-  .accountButton:active {
-    background-color: var(--btn-dark-active);
-  }
-
-  .accountButton:focus {
-    outline: 1px solid var(--btn-dark-outline);
   }
 }
