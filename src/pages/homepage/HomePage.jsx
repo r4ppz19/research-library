@@ -5,7 +5,7 @@ import Header from "../../components/header/Header";
 import TextField from "../../components/form/TextField";
 import { Search } from "lucide-react";
 import ResearchCard from "../../components/card/ResearchCard";
-import Button from "../../components/button/Button"
+import Button from "../../components/button/Button";
 
 function HomePage() {
   const [search, setSearch] = useState("");
@@ -41,8 +41,18 @@ function HomePage() {
             setSearch(e.target.value);
           }}
         />
-        <Button className="allDepartmentsButton" icon={<SlidersHorizontal size={16} />}>All departments</Button>
-        <Button className="allYearButton" icon={<SlidersHorizontal size={16} />}>All year</Button>
+        <Button
+          className="allDepartmentsButton"
+          icon={<SlidersHorizontal size={16} />}
+        >
+          All departments
+        </Button>
+        <Button
+          className="allYearButton"
+          icon={<SlidersHorizontal size={16} />}
+        >
+          All year
+        </Button>
       </section>
       <section className={style.researchContainer}>
         <ResearchCard />
@@ -52,7 +62,7 @@ function HomePage() {
         <ResearchCard />
         <ResearchCard />
       </section>
-    </main >
+    </main>
   );
 }
 
