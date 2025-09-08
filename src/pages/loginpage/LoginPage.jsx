@@ -1,10 +1,17 @@
+import { useState } from "react";
 import style from "./LoginPage.module.css";
 import LoginForm from "../../components/form/LoginForm";
 import SchoolLogo from "../../assets/school-logo.svg";
 
 function LoginPage() {
+  const [loginMode, setLoginMode] = useState("admin");
+
+  const toggleLoginMode = () => {
+    setLoginMode((prev) => (prev === "admin" ? "student" : "admin"));
+  };
+
   return (
-    <div className={style.page}>
+    <div className={`${style.page} ${style[loginMode]}`}>
       <div className={style.mainCard}>
         <div className={style.introCard}>
           <img className={style.logo} src={SchoolLogo} alt="acd-logo" />
@@ -17,16 +24,24 @@ function LoginPage() {
           </div>
         </div>
         <div className={style.formCard}>
-          <h2 className={style.header}>Admin login</h2>
+          <h2 className={style.header}>
+            {loginMode === "admin" ? "Admin Login" : "Student Login"}
+          </h2>
           <p className={style.text}>
-            Enter your credentials to access the admin dashboard
+            {loginMode === "admin"
+              ? "Enter your credentials to access the admin dashboard"
+              : "Enter your credentials to access the student dashboard"}
           </p>
-          <LoginForm />
+          <LoginForm loginMode={loginMode} />
           <p className={style.redirect}>
-            Are you a student?{" "}
-            <a className={style.loginLink} href="#">
+            {loginMode === "admin" ? "Are you a student?" : "Are you an admin?"}
+            <button
+              type="button"
+              className={style.linkButton}
+              onClick={toggleLoginMode}
+            >
               Login
-            </a>
+            </button>
           </p>
         </div>
       </div>

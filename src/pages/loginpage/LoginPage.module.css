@@ -74,23 +74,24 @@
   text-align: center;
 }
 
-.loginLink {
+.linkButton {
   color: var(--color-accent);
   text-decoration: none;
+  background: transparent;
+  border: transparent;
 }
 
-.loginLink:hover {
+.linkButton:hover {
   color: var(--color-accent-focus);
   text-decoration: underline;
   text-decoration-color: var(--color-accent-focus);
 }
 
-.loginLink:focus-visible {
-  outline: 2px solid var(--color-accent-focus);
-  outline-offset: 2px;
+.linkButton:focus-visible {
+  outline: 0px;
 }
 
-.loginLink:active {
+.linkButton:active {
   color: var(--color-light-contrast);
 }
 
@@ -100,6 +101,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }
 
   .mainCard {
@@ -110,11 +112,11 @@
     height: 500px;
     border-radius: 20px;
     box-shadow: var(--shadow-card);
+    position: relative;
   }
 
   .introCard {
     flex: 1;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -123,6 +125,10 @@
     border-radius: 15px 0px 0px 15px;
     border: 0.5px solid var(--color-border);
     border-right: none;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    transition: var(--transition-slide);
   }
 
   .logo {
@@ -155,10 +161,31 @@
     justify-content: flex-start;
     padding-top: 40px;
     gap: 15px;
-    height: 100%;
     border-radius: 0px 15px 15px 0px;
     border: 0.5px solid var(--border-default);
     border-left: none;
     padding: 40px;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    transition: var(--transition-slide);
+  }
+
+  .page.admin .introCard {
+    left: 0;
+    border-radius: 15px 0px 0px 15px;
+  }
+  .page.admin .formCard {
+    left: 50%;
+    border-radius: 0px 15px 15px 0px;
+  }
+
+  .page.student .introCard {
+    left: 50%;
+    border-radius: 0px 15px 15px 0px;
+  }
+  .page.student .formCard {
+    left: 0;
+    border-radius: 15px 0px 0px 15px;
   }
 }
