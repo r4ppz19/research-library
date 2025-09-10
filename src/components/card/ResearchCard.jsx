@@ -25,7 +25,6 @@ function ResearchCard({ title, author, date, department, abstract }) {
         Read Abstract
       </Button>
 
-      {/* Render the modal when isOpen is true */}
       <AbstractModal
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}

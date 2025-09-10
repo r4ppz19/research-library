@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { SlidersHorizontal } from "lucide-react";
-import style from "./HomePage.module.css";
+import style from "./StudentDashboard.module.css";
 import Header from "../../components/header/Header";
 import TextField from "../../components/form/TextField";
 import { Search } from "lucide-react";
