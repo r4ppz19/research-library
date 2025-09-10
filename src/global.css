@@ -17,6 +17,7 @@
   --color-bg: var(--gray-100);
   --color-surface: var(--gray-100);
   --color-surface-alt: var(--gray-200);
+  --color-overlay: rgba(0, 0, 0, 0.7);
 
   /* ================= Text ================= */
   --color-text: var(--gray-700);

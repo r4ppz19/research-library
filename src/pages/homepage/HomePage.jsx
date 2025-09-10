@@ -72,16 +72,12 @@ function HomePage() {
             setSearch(e.target.value);
           }}
         />
-        <Button
-          className="allDepartmentsButton"
-          icon={<SlidersHorizontal size={16} />}
-        >
+        <Button className="allDepartmentsButton">
+          <SlidersHorizontal size={16} />
           All departments
         </Button>
-        <Button
-          className="allYearButton"
-          icon={<SlidersHorizontal size={16} />}
-        >
+        <Button className="allYearButton">
+          <SlidersHorizontal size={16} />
           All year
         </Button>
       </section>

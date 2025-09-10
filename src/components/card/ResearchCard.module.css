@@ -26,6 +26,7 @@
 
 .author,
 .date {
+  color: var(--gray-700);
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-regular);
 }

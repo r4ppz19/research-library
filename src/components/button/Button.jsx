@@ -4,7 +4,6 @@ function Button({
   type = "button",
   children,
   variant = "primary",
-  icon,
   className = "",
   ...props
 }) {
@@ -14,7 +13,6 @@ function Button({
       className={`${style.button} ${style[variant]} ${className}`}
       {...props}
     >
-      {icon && <span className={style.icon}>{icon}</span>}
       {children}
     </button>
   );
