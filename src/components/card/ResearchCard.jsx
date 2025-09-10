@@ -2,24 +2,22 @@ import style from "./ResearchCard.module.css";
 import Button from "../button/Button.jsx";
 import { Eye } from "lucide-react";
 
-function ResearchCard() {
+function ResearchCard({ title, author, date, department, abstract }) {
+  const preview =
+    abstract.length > 150 ? abstract.substring(0, 150) + "..." : abstract;
+
   return (
     <div className={style.card}>
-      <h1 className={style.title}>
-        Quantum Computing Applications in Cryptography
-      </h1>
+      <h1 className={style.title}>{title}</h1>
       <div className={style.infoContainer}>
-        <p className={style.author}>By Dr. Eleanor Chen</p>
-        <p className={style.date}>March 22, 2023</p>
+        <p className={style.author}>By {author}</p>
+        <p className={style.date}>{date}</p>
       </div>
       <div className={style.departmentContainer}>
-        <p className={style.department}>Computer Science</p>
+        <p className={style.department}>{department}</p>
       </div>
-      <p className={style.abstract}>
-        Quantum computing has emerged as a disruptive technology with the
-        potential to transform modern cryptography. Traditional encryption...
-      </p>
-      <Button icon={<Eye />} padding="8px 10px">
+      <p className={style.abstract}>{preview}</p>
+      <Button className={style.readButton} icon={<Eye size={18} />}>
         Read Abstract
       </Button>
     </div>

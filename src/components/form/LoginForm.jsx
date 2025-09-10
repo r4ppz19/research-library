@@ -12,7 +12,6 @@ function LoginForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Optional validation here
     navigate("/homepage");
   };
 

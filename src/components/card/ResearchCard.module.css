@@ -1,13 +1,15 @@
 .card {
   display: flex;
   flex-direction: column;
-  border: 0.2px solid var(--border-default);
+  justify-content: space-between;
+  flex: 1 1 calc(33.333% - 13.33px); /* even cards */
   border-radius: 20px;
-  background-color: var(--color-surface);
   padding: 20px;
   gap: 15px;
-  flex: 1 1 calc(33.333% - 13.33px); /* even cards */
+  min-height: 200px;
+  background-color: var(--color-surface);
   box-shadow: var(--shadow-card);
+  border: 0.2px solid var(--border-default);
 }
 
 .title {
@@ -48,4 +50,17 @@
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-regular);
   color: var(--color-text);
+
+  flex-grow: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6; /* limit max lines */
+  -webkit-box-orient: vertical;
+}
+
+.readButton {
+  margin-top: auto;
+  padding: 10px 10px;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-body);
 }
