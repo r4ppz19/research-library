@@ -39,17 +39,14 @@
 }
 
 .textField {
-  flex: 2;
-}
-
-.allDepartmentsButton,
-.allYearButton {
-  flex: 1;
+  flex: 3;
 }
 
 .researchSection {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   gap: 20px;
 }
 

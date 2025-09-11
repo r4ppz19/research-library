@@ -1,32 +1,37 @@
 .filterSection {
   display: flex;
+  flex-direction: row;
+  align-items: flex-start;
   gap: 10px;
   position: relative;
+  flex: 2;
 }
 
 .dropdownWrapper {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.filterButton {
+  white-space: nowrap;
 }
 
 .dropdownMenu {
   position: absolute;
   top: 110%;
   left: 0;
-  background: var(--color-surface);
-  border: 1px solid var(--border-default);
-  border-radius: 6px;
+  border-radius: 5px;
   padding: 5px 0;
-  list-style: none;
-  box-shadow: var(--shadow-sm);
   z-index: 100;
   min-width: 150px;
+  background: var(--color-surface);
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-sm);
 }
 
 .dropdownMenu li {
   padding: 8px 12px;
   cursor: pointer;
-}
-
-.dropdownMenu li:hover {
-  background: var(--color-hover);
 }

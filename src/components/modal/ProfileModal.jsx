@@ -33,7 +33,7 @@ function ProfileModal({ onClose, isOpen }) {
     <div className={style.overlay} onClick={onClose}>
       <div className={style.modal} onClick={(e) => e.stopPropagation()}>
         <div className={style.header}>
-          <h1 className={style.title}>My Profile</h1>
+          <h1 className={style.title}>Profile</h1>
           <button
             className={style.closeButton}
             onClick={onClose}
@@ -58,7 +58,7 @@ function ProfileModal({ onClose, isOpen }) {
         </div>
 
         <div className={style.subheader}>
-          <h2 className={style.tableHeader}>My Document Request</h2>
+          <h2 className={style.tableHeader}>Document Request</h2>
         </div>
         <table className={style.table}>
           <thead>

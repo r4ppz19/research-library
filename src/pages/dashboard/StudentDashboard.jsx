@@ -5,6 +5,7 @@ import Header from "../../components/header/Header";
 import TextField from "../../components/form/TextField";
 import ResearchCard from "../../components/card/ResearchCard";
 import FilterResearch from "../../components/filter/FilterResearch";
+import dummyResearch from "../../dummy/dummy-research";
 
 function HomePage() {
   const [search, setSearch] = useState("");
@@ -17,36 +18,6 @@ function HomePage() {
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
-
-  const dummyResearch = [
-    {
-      id: 1,
-      title: "Quantum Computing Applications in Cryptography",
-      author: "Dr. Eleanor Chen",
-      date: "March 22, 2023",
-      department: "Computer Science",
-      abstract:
-        "Quantum computing has emerged as a disruptive technology with the potential to transform modern cryptography. Traditional encryption algorithms such as RSA and ECC rely on the computational difficulty of problems like factoring and discrete logarithms, which quantum computers can solve efficiently using Shor’s algorithm. This research explores practical approaches to developing quantum-resistant cryptographic protocols, analyzing their strengths and weaknesses, and proposing hybrid methods that combine classical and quantum-safe encryption.",
-    },
-    {
-      id: 2,
-      title: "AI in Healthcare: Predictive Analytics",
-      author: "John Martinez",
-      date: "July 10, 2024",
-      department: "Information Technology",
-      abstract:
-        "This study explores the application of artificial intelligence in healthcare, focusing on predictive analytics to improve patient outcomes. By leveraging large datasets of medical records, diagnostic tests, and genetic information, machine learning models can detect patterns and predict potential illnesses before symptoms manifest. The research discusses ethical implications, data privacy concerns, and implementation challenges, while highlighting case studies where AI-driven predictions significantly reduced hospital readmissions and improved personalized treatment plans.",
-    },
-    {
-      id: 3,
-      title: "Blockchain for Supply Chain Management",
-      author: "Sophia Lee",
-      date: "January 5, 2025",
-      department: "Business Administration",
-      abstract:
-        "Blockchain technology offers new ways to improve transparency and accountability in global supply chain management. This research examines the integration of blockchain into logistics, focusing on real-time tracking of goods, verification of authenticity, and reduction of fraudulent activities. The paper analyzes case studies across industries such as food safety, pharmaceuticals, and manufacturing, where blockchain-based systems increased trust among stakeholders and optimized operational efficiency.",
-    },
-  ];
 
   const departments = [...new Set(dummyResearch.map((p) => p.department))];
   const years = [...new Set(dummyResearch.map((p) => p.date.split(" ").pop()))];

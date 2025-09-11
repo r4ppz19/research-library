@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SlidersHorizontal, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import style from "./FilterResearch.module.css";
 import Button from "../button/Button";
 
@@ -25,9 +25,11 @@ function FilterResearch({ departments, years, onFilter }) {
     <div className={style.filterSection}>
       {/* Department Filter */}
       <div className={style.dropdownWrapper}>
-        <Button onClick={() => setDeptOpen((prev) => !prev)}>
-          <SlidersHorizontal size={16} />
-          {selectedDept} <ChevronDown size={14} />
+        <Button
+          onClick={() => setDeptOpen((prev) => !prev)}
+          className={style.filterButton}
+        >
+          {selectedDept} <ChevronDown size={18} />
         </Button>
         {deptOpen && (
           <ul className={style.dropdownMenu}>
@@ -45,9 +47,11 @@ function FilterResearch({ departments, years, onFilter }) {
 
       {/* Year Filter */}
       <div className={style.dropdownWrapper}>
-        <Button onClick={() => setYearOpen((prev) => !prev)}>
-          <SlidersHorizontal size={16} />
-          {selectedYear} <ChevronDown size={14} />
+        <Button
+          onClick={() => setYearOpen((prev) => !prev)}
+          className={style.filterButton}
+        >
+          {selectedYear} <ChevronDown size={18} />
         </Button>
         {yearOpen && (
           <ul className={style.dropdownMenu}>
