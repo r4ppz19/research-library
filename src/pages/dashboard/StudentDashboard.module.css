@@ -62,6 +62,7 @@
 .paginationButton {
   padding: 7px 10px;
   font-size: var(--font-size-small);
+  gap: 5px;
 }
 
 .pageInfo {

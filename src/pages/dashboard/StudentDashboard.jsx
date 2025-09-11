@@ -122,7 +122,7 @@ function HomePage() {
             disabled={currentPage === 1}
             aria-label="Previous page"
           >
-            <ChevronLeft size={20} />
+            <ChevronLeft size={18} />
             Previous
           </Button>
           <span className={style.pageInfo}>
@@ -135,7 +135,7 @@ function HomePage() {
             aria-label="Next page"
           >
             Next
-            <ChevronRight size={20} />
+            <ChevronRight size={18} />
           </Button>
         </section>
       )}
