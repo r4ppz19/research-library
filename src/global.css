@@ -79,7 +79,7 @@
   --shadow-card: 0 8px 16px rgba(0, 0, 0, 0.1);
 
   /* ================= Typography ================= */
-  --font-family-base: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-family-base: "Roboto", "Inter", "Helvetica Neue", Arial, sans-serif;
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
