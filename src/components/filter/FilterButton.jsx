@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import style from "./FilterResearch.module.css";
+import style from "./FilterButton.module.css";
 import Button from "../button/Button";
 
-function FilterResearch({ departments, years, onFilter }) {
+function FilterButton({ departments, years, onFilter }) {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [selectedDept, setSelectedDept] = useState("All departments");
   const [selectedYear, setSelectedYear] = useState("All year");
@@ -69,4 +69,4 @@ function FilterResearch({ departments, years, onFilter }) {
   );
 }
 
-export default FilterResearch;
+export default FilterButton;

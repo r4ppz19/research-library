@@ -4,7 +4,7 @@ import style from "./StudentDashboard.module.css";
 import Header from "../../components/header/Header";
 import TextField from "../../components/form/TextField";
 import ResearchCard from "../../components/card/ResearchCard";
-import FilterResearch from "../../components/filter/FilterResearch";
+import FilterButton from "../../components/filter/FilterButton";
 import dummyResearch from "../../dummy/dummy-research";
 import Button from "../../components/button/Button";
 
@@ -103,7 +103,7 @@ function HomePage() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <FilterResearch
+        <FilterButton
           departments={departments}
           years={years}
           onFilter={setFilters}
