@@ -19,7 +19,7 @@
   width: 90%;
   max-width: 100%;
   padding: 20px;
-  gap: 20px;
+  gap: 10px;
   max-height: 95vh;
   overflow-y: auto;
 }
@@ -51,15 +51,15 @@
 
 .studentInfoContainer {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.infoRow {
-  display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 50px;
+}
+
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .infoContainer {
@@ -90,9 +90,9 @@
 .table {
   width: 100%;
   border-collapse: collapse;
-  border: 1px solid var(--border-default); /* Add border to table for radius support */
-  border-radius: 10px; /* Add radius to table */
-  overflow: hidden; /* Clip to show radius */
+  border: 1px solid var(--border-default);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .table thead {
@@ -132,6 +132,10 @@
   .modal {
     border-radius: 20px;
     width: 700px;
+  }
+
+  .studentInfoContainer {
+    padding: 0px 30px;
   }
 
   .table {

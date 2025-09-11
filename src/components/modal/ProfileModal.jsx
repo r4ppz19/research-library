@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import style from "./ProfileModal.module.css";
-import { X, Send } from "lucide-react";
+import { X, Download } from "lucide-react";
 import Button from "../button/Button";
 
 function ProfileModal({ onClose, isOpen }) {
@@ -45,25 +45,17 @@ function ProfileModal({ onClose, isOpen }) {
           </button>
         </div>
         <div className={style.studentInfoContainer}>
-          <div className={style.infoRow}>
-            <div className={style.infoContainer}>
-              <h3 className={style.infoHeader}>Name</h3>
-              <p className={style.info}>John Rey Rabosa</p>
-            </div>
-            <div className={style.infoContainer}>
-              <h3 className={style.infoHeader}>ID</h3>
-              <p className={style.info}>2021-00123-DCS</p>
-            </div>
+          <div className={style.infoColumn}>
+            <h3 className={style.infoHeader}>Name</h3>
+            <p className={style.info}>John Rey Rabosa</p>
+            <h3 className={style.infoHeader}>ID</h3>
+            <p className={style.info}>2021-00123-DCS</p>
           </div>
-          <div className={style.infoRow}>
-            <div className={style.infoContainer}>
-              <h3 className={style.infoHeader}>Department</h3>
-              <p className={style.info}>BSIT</p>
-            </div>
-            <div className={style.infoContainer}>
-              <h3 className={style.infoHeader}>Year Level</h3>
-              <p className={style.info}>2nd Year</p>
-            </div>
+          <div className={style.infoColumn}>
+            <h3 className={style.infoHeader}>Department</h3>
+            <p className={style.info}>BSIT</p>
+            <h3 className={style.infoHeader}>Year Level</h3>
+            <p className={style.info}>2nd Year</p>
           </div>
         </div>
 
@@ -85,7 +77,10 @@ function ProfileModal({ onClose, isOpen }) {
                 <td data-label="Status">{req.status}</td>
                 <td data-label="Action">
                   {req.status === "Accepted" ? (
-                    <Button className={style.actionButton}>Download</Button>
+                    <Button className={style.actionButton}>
+                      <Download size={14} />
+                      Download
+                    </Button>
                   ) : (
                     <span className={style.pending}>Nuh uh</span>
                   )}
