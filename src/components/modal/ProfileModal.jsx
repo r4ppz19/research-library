@@ -3,7 +3,7 @@ import style from "./ProfileModal.module.css";
 import { X, Download } from "lucide-react";
 import Button from "../button/Button";
 
-function ProfileModal({ onClose, isOpen }) {
+function ProfileModal({ onClose, isOpen, student }) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -13,21 +13,6 @@ function ProfileModal({ onClose, isOpen }) {
     };
   }, [isOpen]);
   if (!isOpen) return null;
-
-  const requestPdf = [
-    {
-      id: 1,
-      title: "Quantum Computing in Cryptography",
-      status: "Accepted",
-      action: "Download",
-    },
-    {
-      id: 2,
-      title: "Artificial Intelligence in Education",
-      status: "Pending",
-      action: "N/A",
-    },
-  ];
 
   return (
     <div className={style.overlay} onClick={onClose}>
@@ -44,49 +29,77 @@ function ProfileModal({ onClose, isOpen }) {
         </div>
         <div className={style.studentInfoContainer}>
           <div className={style.infoColumn}>
-            <h3 className={style.infoHeader}>Name</h3>
-            <p className={style.info}>John Rey Rabosa</p>
-            <h3 className={style.infoHeader}>ID</h3>
-            <p className={style.info}>2021-00123-DCS</p>
+            <div className={style.infoGroup}>
+              <h3 className={style.infoHeader}>Name</h3>
+              <p className={style.info}>{student.name}</p>
+            </div>
+            <div className={style.infoGroup}>
+              <h3 className={style.infoHeader}>ID</h3>
+              <p className={style.info}>{student.id}</p>
+            </div>
           </div>
           <div className={style.infoColumn}>
-            <h3 className={style.infoHeader}>Department</h3>
-            <p className={style.info}>BSIT</p>
-            <h3 className={style.infoHeader}>Year Level</h3>
-            <p className={style.info}>2nd Year</p>
+            <div className={style.infoGroup}>
+              <h3 className={style.infoHeader}>Department</h3>
+              <p className={style.info}>{student.department}</p>
+            </div>
+            <div className={style.infoGroup}>
+              <h3 className={style.infoHeader}>Year Level</h3>
+              <p className={style.info}>{student.yearLevel}</p>
+            </div>
           </div>
         </div>
 
         <div className={style.subheader}>
           <h2 className={style.tableHeader}>Document Request</h2>
         </div>
-        <table className={style.table}>
-          <thead>
-            <tr>
-              <th>Paper title</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {requestPdf.map((req) => (
-              <tr key={req.id}>
-                <td data-label="Paper title">{req.title}</td>
-                <td data-label="Status">{req.status}</td>
-                <td data-label="Action">
-                  {req.status === "Accepted" ? (
-                    <Button className={style.actionButton}>
-                      <Download size={14} />
-                      Download
-                    </Button>
-                  ) : (
-                    <span className={style.pending}>Nuh uh</span>
-                  )}
-                </td>
+        <div className={style.tableWrapper}>
+          <table className={style.table}>
+            <thead>
+              <tr>
+                <th>Paper title</th>
+                <th>Status</th>
+                <th>Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {student.requests.map((req) => (
+                <tr key={req.id}>
+                  <td data-label="Paper title">{req.title}</td>
+                  <td data-label="Status">
+                    <span
+                      className={
+                        req.status === "Pending"
+                          ? style.pending
+                          : req.status === "Rejected"
+                            ? style.rejected
+                            : req.status === "Accepted"
+                              ? style.accepted
+                              : ""
+                      }
+                    >
+                      {req.status}
+                    </span>
+                  </td>
+                  <td data-label="Action">
+                    {req.status === "Accepted" ? (
+                      <Button className={style.actionButton}>
+                        <Download size={14} />
+                        Download
+                      </Button>
+                    ) : req.status === "Pending" ? (
+                      <span>Pending</span>
+                    ) : req.status === "Rejected" ? (
+                      <span>Rejected</span>
+                    ) : (
+                      <span>N/A</span>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

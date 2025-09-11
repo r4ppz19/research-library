@@ -6,8 +6,6 @@ import { Eye } from "lucide-react";
 
 function ResearchCard({ title, author, date, department, abstract }) {
   const [isOpen, setIsOpen] = useState(false);
-  const preview =
-    abstract.length > 150 ? abstract.substring(0, 150) + "..." : abstract;
 
   return (
     <div className={style.card}>
@@ -19,7 +17,7 @@ function ResearchCard({ title, author, date, department, abstract }) {
       <div className={style.departmentContainer}>
         <p className={style.department}>{department}</p>
       </div>
-      <p className={style.abstract}>{preview}</p>
+      <p className={style.abstract}>{abstract}</p>
       <Button className={style.readButton} onClick={() => setIsOpen(true)}>
         <Eye size={18} />
         Read Abstract

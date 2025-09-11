@@ -39,7 +39,7 @@
 }
 
 .textField {
-  flex: 3;
+  flex: 5;
 }
 
 .researchSection {
@@ -58,6 +58,7 @@
   .researchSection {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
     gap: 20px;
   }
 

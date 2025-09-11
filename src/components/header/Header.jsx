@@ -4,6 +4,7 @@ import { Menu, X, CircleUser } from "lucide-react";
 import SchoolLogo from "../../assets/school-logo.svg";
 import Button from "../button/Button";
 import ProfileModal from "../modal/ProfileModal";
+import student from "../../dummy/student";
 
 function Header({ menuOpen, toggleMenu }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +40,11 @@ function Header({ menuOpen, toggleMenu }) {
         </div>
       )}
 
-      <ProfileModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      <ProfileModal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        student={student}
+      />
     </header>
   );
 }
