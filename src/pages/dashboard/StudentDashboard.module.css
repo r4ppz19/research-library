@@ -15,7 +15,6 @@
   align-items: center;
   text-align: center;
   gap: 10px;
-  margin: 10px 0px;
 }
 
 .header {
@@ -28,7 +27,7 @@
   color: var(--color-text);
   font-size: var(--font-size-h4);
   font-weight: var(--font-weight-regular);
-  padding-bottom: 30px;
+  padding-bottom: 10px;
 }
 
 .searchSection {
@@ -73,6 +72,10 @@
 @media (min-width: 768px) {
   .page {
     padding: 100px 80px;
+  }
+
+  .heroSection {
+    margin: 10px 0px;
   }
 
   .researchSection {
