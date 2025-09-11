@@ -29,11 +29,11 @@ function Header({ menuOpen, toggleMenu }) {
           className={style.accountButtonDesktop}
           onClick={() => setIsOpen(true)}
         >
-          <CircleUser size={20} />
+          <CircleUser size={16} />
           Account
         </Button>
         <Button className={style.logoutButton} onClick={handleLogout}>
-          <LogOut size={20} />
+          <LogOut size={16} />
           Log-out
         </Button>
       </div>
@@ -48,12 +48,12 @@ function Header({ menuOpen, toggleMenu }) {
             className={style.buttonMobile}
             onClick={() => setIsOpen(true)}
           >
-            <CircleUser size={16} />
+            <CircleUser size={14} />
             Account
           </Button>
 
           <Button className={style.buttonMobile} onClick={handleLogout}>
-            <LogOut size={20} />
+            <LogOut size={14} />
             Log-out
           </Button>
         </div>

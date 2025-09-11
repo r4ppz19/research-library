@@ -4,19 +4,25 @@
   align-items: flex-start;
   gap: 5px;
   position: relative;
+}
+
+.departmentWrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex: 3;
+}
+
+.yearWrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
   flex: 2;
 }
 
-.dropdownWrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
 .filterButton {
-  width: 100%;
   white-space: nowrap;
+  width: 100%;
 }
 
 .dropdownMenu {
@@ -36,4 +42,8 @@
 .dropdownMenu li {
   padding: 8px 12px;
   cursor: pointer;
+}
+
+.dropdownMenu li:hover {
+  background-color: var(--gray-300);
 }

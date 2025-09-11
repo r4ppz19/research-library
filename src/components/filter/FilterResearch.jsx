@@ -31,7 +31,7 @@ function FilterResearch({ departments, years, onFilter }) {
   return (
     <div className={style.filterSection}>
       {/* Department Filter */}
-      <div className={style.dropdownWrapper}>
+      <div className={style.departmentWrapper}>
         <Button onClick={toggleDeptDropdown} className={style.filterButton}>
           {selectedDept} <ChevronDown size={18} />
         </Button>
@@ -50,7 +50,7 @@ function FilterResearch({ departments, years, onFilter }) {
       </div>
 
       {/* Year Filter */}
-      <div className={style.dropdownWrapper}>
+      <div className={style.yearWrapper}>
         <Button onClick={toggleYearDropdown} className={style.filterButton}>
           {selectedYear} <ChevronDown size={18} />
         </Button>
