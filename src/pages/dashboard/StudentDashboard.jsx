@@ -50,8 +50,9 @@ function HomePage() {
       <section className={style.heroSection}>
         <h1 className={style.header}>Discover Academic Research</h1>
         <p className={style.text}>
-          Explore a growing collection of academic research papers and
-          publications.
+          Explore a collection of student and faculty research papers, spanning
+          multiple departments and years. Search, filter, and access innovative
+          work that pushes the boundaries of knowledge.
         </p>
       </section>
 
