@@ -24,7 +24,7 @@ function HomePage() {
 
   // Scroll to top on page change
   useEffect(() => {
-    window.scrollTo({ top: 200, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [currentPage]);
 
   const departments = useMemo(
