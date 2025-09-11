@@ -22,9 +22,9 @@
   background: var(--color-primary);
   color: var(--color-primary-contrast);
   flex: 1;
-  padding: 30px 50px;
+  padding: 40px 50px;
   border-radius: 0px 0px 15px 15px;
-  gap: 25px;
+  gap: 30px;
 }
 
 .logo {
@@ -35,7 +35,7 @@
 .textContainer {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 15px;
 }
 
 .title {
@@ -132,7 +132,7 @@
   }
 
   .logo {
-    width: 190px;
+    width: 180px;
     height: auto;
   }
 
@@ -143,15 +143,15 @@
     width: 100%;
     white-space: normal;
     overflow: visible;
+    text-align: center;
   }
 
   .description {
     display: block;
-    font-size: var(--font-size-h4);
+    font-size: var(--font-size-body);
     font-weight: var(--font-weight-regular);
     color: var(--color-text-invert);
     flex-shrink: 0;
-    text-align: left;
   }
 
   .formCard {
