@@ -1,11 +1,12 @@
-import { useState } from "react";
-import { Search } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import style from "./StudentDashboard.module.css";
 import Header from "../../components/header/Header";
 import TextField from "../../components/form/TextField";
 import ResearchCard from "../../components/card/ResearchCard";
 import FilterResearch from "../../components/filter/FilterResearch";
 import dummyResearch from "../../dummy/dummy-research";
+import Button from "../../components/button/Button";
 
 function HomePage() {
   const [search, setSearch] = useState("");
@@ -14,6 +15,8 @@ function HomePage() {
     department: "All departments",
     year: "All year",
   });
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 9;
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -39,6 +42,29 @@ function HomePage() {
 
     return matchesDepartment && matchesYear && matchesSearch;
   });
+
+  const totalPages = Math.ceil(filteredResearch.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const paginatedResearch = filteredResearch.slice(
+    startIndex,
+    startIndex + itemsPerPage,
+  );
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
+
+  const handleNext = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
 
   return (
     <main
@@ -72,8 +98,8 @@ function HomePage() {
       </section>
 
       <section className={style.researchSection}>
-        {filteredResearch.length > 0 ? (
-          filteredResearch.map((paper) => (
+        {paginatedResearch.length > 0 ? (
+          paginatedResearch.map((paper) => (
             <ResearchCard
               key={paper.id}
               title={paper.title}
@@ -87,6 +113,32 @@ function HomePage() {
           <p>No research paper found!</p>
         )}
       </section>
+
+      {totalPages > 1 && (
+        <section className={style.paginationSection}>
+          <Button
+            className={style.paginationButton}
+            onClick={handlePrevious}
+            disabled={currentPage === 1}
+            aria-label="Previous page"
+          >
+            <ChevronLeft size={20} />
+            Previous
+          </Button>
+          <span className={style.pageInfo}>
+            Page {currentPage} of {totalPages}
+          </span>
+          <Button
+            className={style.paginationButton}
+            onClick={handleNext}
+            disabled={currentPage === totalPages}
+            aria-label="Next page"
+          >
+            Next
+            <ChevronRight size={20} />
+          </Button>
+        </section>
+      )}
     </main>
   );
 }
