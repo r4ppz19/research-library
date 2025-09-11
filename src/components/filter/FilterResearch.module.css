@@ -1,0 +1,39 @@
+.filterSection {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+  flex: 2;
+}
+
+.dropdownWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.filterButton {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  border-radius: 5px;
+  padding: 5px 0;
+  z-index: 100;
+  min-width: 150px;
+  width: 100%;
+  background: var(--color-surface);
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-sm);
+}
+
+.dropdownMenu li {
+  padding: 8px 12px;
+  cursor: pointer;
+}

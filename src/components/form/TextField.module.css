@@ -2,9 +2,7 @@
   display: flex;
   align-items: center;
   border-radius: 10px;
-  width: 100%;
   gap: 8px;
-  padding: 0px 10px;
   border: solid 0.8px var(--border-default);
   background-color: var(--color-surface);
   box-shadow: var(--shadow-sm);
@@ -19,14 +17,14 @@
   align-items: center;
   justify-content: center;
   color: var(--color-text);
+  padding: 0px 0px 0px 10px;
 }
 
 .input {
   flex: 1;
   border: none;
   background: transparent;
-  width: 100%;
-  padding: 10px 0px;
+  padding: 10px 10px;
   font-size: var(--font-size-body);
 }
 

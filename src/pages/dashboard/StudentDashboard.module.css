@@ -8,7 +8,7 @@
   gap: 20px;
 }
 
-.textContainer {
+.heroSection {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -30,25 +30,23 @@
   padding-bottom: 30px;
 }
 
-.searchContainer {
+.searchSection {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   width: 100%;
-  gap: 5px;
+  gap: 10px;
 }
 
 .textField {
-  flex: 2;
+  flex: 3;
 }
 
-.allDepartmentsButton,
-.allYearButton {
-  flex: 1;
-}
-
-.researchContainer {
+.researchSection {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   gap: 20px;
 }
 
@@ -57,11 +55,10 @@
     padding: 100px 80px;
   }
 
-  .researchContainer {
-    display: flex;
-    flex-direction: row;
+  .researchSection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    flex-wrap: wrap;
   }
 
   .header {
@@ -72,10 +69,15 @@
     max-width: 80%;
     font-size: var(--font-size-h3);
   }
+
+  .searchSection {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1000px) {
   .page {
-    padding: 100px 100px;
+    padding: 100px 130px;
   }
 }
