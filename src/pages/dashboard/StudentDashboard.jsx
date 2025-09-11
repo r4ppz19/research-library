@@ -84,7 +84,7 @@ function HomePage() {
             />
           ))
         ) : (
-          <p>No results found</p>
+          <p>No research paper found!</p>
         )}
       </section>
     </main>
