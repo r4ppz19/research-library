@@ -30,21 +30,21 @@ function ProfileModal({ onClose, isOpen, student }) {
         <div className={style.studentInfoContainer}>
           <div className={style.infoColumn}>
             <div className={style.infoGroup}>
-              <h3 className={style.infoHeader}>Name</h3>
+              <h3 className={style.infoHeader}>Name:</h3>
               <p className={style.info}>{student.name}</p>
             </div>
             <div className={style.infoGroup}>
-              <h3 className={style.infoHeader}>ID</h3>
+              <h3 className={style.infoHeader}>ID:</h3>
               <p className={style.info}>{student.id}</p>
             </div>
           </div>
           <div className={style.infoColumn}>
             <div className={style.infoGroup}>
-              <h3 className={style.infoHeader}>Department</h3>
+              <h3 className={style.infoHeader}>Department:</h3>
               <p className={style.info}>{student.department}</p>
             </div>
             <div className={style.infoGroup}>
-              <h3 className={style.infoHeader}>Year Level</h3>
+              <h3 className={style.infoHeader}>Year Level:</h3>
               <p className={style.info}>{student.yearLevel}</p>
             </div>
           </div>

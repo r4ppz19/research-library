@@ -1,8 +1,8 @@
 const student = {
-  name: "Jane Doe",
+  name: "John Rey Rabosa",
   id: "2022-00456-DCS",
-  department: "BSCS",
-  yearLevel: "3rd Year",
+  department: "BSIT",
+  yearLevel: "2rd Year",
   requests: [
     {
       id: 1,
