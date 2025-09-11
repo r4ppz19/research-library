@@ -43,7 +43,7 @@ function HomePage() {
   return (
     <main
       className={style.page}
-      style={{ paddingTop: menuOpen ? "150px" : "100px" }}
+      style={{ paddingTop: menuOpen ? "200px" : "100px" }}
     >
       <Header menuOpen={menuOpen} toggleMenu={toggleMenu} />
 

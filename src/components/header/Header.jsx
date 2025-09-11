@@ -45,11 +45,16 @@ function Header({ menuOpen, toggleMenu }) {
       {menuOpen && (
         <div className={style.dropdownMenu}>
           <Button
-            className={style.accountButtonMobile}
+            className={style.buttonMobile}
             onClick={() => setIsOpen(true)}
           >
             <CircleUser size={16} />
             Account
+          </Button>
+
+          <Button className={style.buttonMobile} onClick={handleLogout}>
+            <LogOut size={20} />
+            Log-out
           </Button>
         </div>
       )}
