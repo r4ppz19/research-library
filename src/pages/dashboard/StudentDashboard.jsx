@@ -18,12 +18,22 @@ function HomePage() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filters, search]);
+
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
 
   const departments = [...new Set(dummyResearch.map((p) => p.department))];
-  const years = [...new Set(dummyResearch.map((p) => p.date.split(" ").pop()))];
+  const years = [
+    ...new Set(dummyResearch.map((p) => p.date.split(" ").pop())),
+  ].sort();
 
   const filteredResearch = dummyResearch.filter((paper) => {
     const matchesDepartment =
@@ -43,16 +53,15 @@ function HomePage() {
     return matchesDepartment && matchesYear && matchesSearch;
   });
 
-  const totalPages = Math.ceil(filteredResearch.length / itemsPerPage);
+  const totalPages = Math.max(
+    1,
+    Math.ceil(filteredResearch.length / itemsPerPage),
+  );
   const startIndex = (currentPage - 1) * itemsPerPage;
   const paginatedResearch = filteredResearch.slice(
     startIndex,
     startIndex + itemsPerPage,
   );
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [currentPage]);
 
   const handleNext = () => {
     if (currentPage < totalPages) {

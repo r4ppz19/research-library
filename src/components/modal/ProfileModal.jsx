@@ -88,9 +88,9 @@ function ProfileModal({ onClose, isOpen, student }) {
                         Download
                       </Button>
                     ) : req.status === "Pending" ? (
-                      <span>Pending</span>
+                      <span>idk</span>
                     ) : req.status === "Rejected" ? (
-                      <span>Rejected</span>
+                      <span>idk</span>
                     ) : (
                       <span>N/A</span>
                     )}
