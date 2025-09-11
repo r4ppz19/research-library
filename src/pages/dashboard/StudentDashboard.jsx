@@ -51,7 +51,7 @@ function HomePage() {
       style={{ paddingTop: menuOpen ? "150px" : "100px" }}
     >
       <Header menuOpen={menuOpen} toggleMenu={toggleMenu} />
-      <section className={style.textContainer}>
+      <section className={style.heroSection}>
         <h1 className={style.header}>Discover Academic Research</h1>
         <p className={style.text}>
           Explore a growing collection of academic research papers and
@@ -61,16 +61,13 @@ function HomePage() {
         </p>
       </section>
 
-      <section className={style.searchContainer}>
+      <section className={style.searchSection}>
         <TextField
           className={style.textField}
           placeholder={"Search research paper"}
           icon={<Search size={20} />}
-          padding="0px 10px"
           value={search}
-          onChange={(e) => {
-            setSearch(e.target.value);
-          }}
+          onChange={(e) => setSearch(e.target.value)}
         />
         <Button className="allDepartmentsButton">
           <SlidersHorizontal size={16} />
@@ -82,7 +79,7 @@ function HomePage() {
         </Button>
       </section>
 
-      <section className={style.researchContainer}>
+      <section className={style.researchSection}>
         {dummyResearch.map((paper) => (
           <ResearchCard
             key={paper.id}

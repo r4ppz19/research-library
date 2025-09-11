@@ -51,7 +51,8 @@ function LoginForm() {
         />
       </div>
 
-      <Button type="submit" icon={<LogIn size={20} />}>
+      <Button type="submit">
+        <LogIn size={20} />
         Sign In
       </Button>
     </form>

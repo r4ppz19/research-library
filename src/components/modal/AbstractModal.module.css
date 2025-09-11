@@ -31,7 +31,11 @@
   position: relative;
 }
 
-.close {
+.title {
+  font-size: var(--font-size-h4);
+}
+
+.closeButton {
   position: absolute;
   top: 0px;
   right: 0px;
@@ -40,10 +44,6 @@
   cursor: pointer;
   padding: 5px;
   color: var(--color-text);
-}
-
-.title {
-  font-size: var(--font-size-h4);
 }
 
 .infoContainer {

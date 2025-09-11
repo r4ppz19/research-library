@@ -31,7 +31,7 @@ function AbstractModal({
         <div className={styles.header}>
           <h2 className={styles.title}>{title}</h2>
           <button
-            className={styles.close}
+            className={styles.closeButton}
             onClick={onClose}
             aria-label="Close modal"
           >

@@ -45,7 +45,7 @@
   outline: 0px;
 }
 
-.accountButton {
+.accountButtonDesktop {
   display: none;
 }
 
@@ -67,6 +67,18 @@
   padding: 10px 20px;
 }
 
+.accountButtonMobile {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  border-radius: 7px;
+  border: 0.5px solid var(--border-default);
+  padding: 5px 10px;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  width: fit-content;
+}
+
 @media (min-width: 768px) {
   .menuButton {
     display: none;
@@ -76,7 +88,7 @@
     display: none;
   }
 
-  .accountButton {
+  .accountButtonDesktop {
     display: flex;
     flex-direction: row;
     gap: 5px;

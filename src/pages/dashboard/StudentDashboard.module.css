@@ -8,7 +8,7 @@
   gap: 20px;
 }
 
-.textContainer {
+.heroSection {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -30,7 +30,7 @@
   padding-bottom: 30px;
 }
 
-.searchContainer {
+.searchSection {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,7 +47,7 @@
   flex: 1;
 }
 
-.researchContainer {
+.researchSection {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -58,7 +58,7 @@
     padding: 100px 80px;
   }
 
-  .researchContainer {
+  .researchSection {
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -74,7 +74,7 @@
     font-size: var(--font-size-h3);
   }
 
-  .searchContainer {
+  .searchSection {
     display: flex;
     flex-direction: row;
   }
