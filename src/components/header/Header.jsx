@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./Header.module.css";
 import { Menu, X, CircleUser, LogOut } from "lucide-react";
-import SchoolLogo from "../../assets/school-logo.svg";
+import SchoolLogo from "/school-logo.svg";
 import Button from "../button/Button";
 import ProfileModal from "../modal/ProfileModal";
 import student from "../../dummy/student";

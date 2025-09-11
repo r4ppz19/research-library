@@ -1,7 +1,7 @@
 import { useState } from "react";
 import style from "./LoginPage.module.css";
 import LoginForm from "../../components/form/LoginForm";
-import SchoolLogo from "../../assets/school-logo.svg";
+import SchoolLogo from "/school-logo.svg";
 
 function LoginPage() {
   const [loginMode, setLoginMode] = useState("admin");
