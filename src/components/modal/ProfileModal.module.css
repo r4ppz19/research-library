@@ -147,8 +147,11 @@
 
 @media (min-width: 768px) {
   .modal {
-    border-radius: 20px;
-    width: 700px;
+    width: 50%;
+    max-width: 80%;
+    padding: 20px;
+    gap: 10px;
+    max-height: 80vh;
   }
 
   .studentInfoContainer {

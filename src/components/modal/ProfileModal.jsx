@@ -18,7 +18,7 @@ function ProfileModal({ onClose, isOpen, student }) {
     <div className={style.overlay} onClick={onClose}>
       <div className={style.modal} onClick={(e) => e.stopPropagation()}>
         <div className={style.header}>
-          <h1 className={style.title}>Profile</h1>
+          <h1 className={style.title}>Account</h1>
           <button
             className={style.closeButton}
             onClick={onClose}
