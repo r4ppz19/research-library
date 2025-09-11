@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import style from "./StudentDashboard.module.css";
 import Header from "../../components/header/Header";
@@ -8,71 +8,75 @@ import FilterResearch from "../../components/filter/FilterResearch";
 import dummyResearch from "../../dummy/dummy-research";
 import Button from "../../components/button/Button";
 
+const ITEMS_PER_PAGE = 9;
+const DEFAULT_FILTERS = { department: "All departments", year: "All year" };
+
 function HomePage() {
   const [search, setSearch] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
-  const [filters, setFilters] = useState({
-    department: "All departments",
-    year: "All year",
-  });
+  const [filters, setFilters] = useState(DEFAULT_FILTERS);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9;
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [currentPage]);
-
+  // Reset to page 1 whenever filters/search change
   useEffect(() => {
     setCurrentPage(1);
   }, [filters, search]);
 
-  const toggleMenu = () => {
-    setMenuOpen((prev) => !prev);
-  };
+  // Scroll to top on page change
+  useEffect(() => {
+    window.scrollTo({ top: 200, behavior: "smooth" });
+  }, [currentPage]);
 
-  const departments = [...new Set(dummyResearch.map((p) => p.department))];
-  const years = [
-    ...new Set(dummyResearch.map((p) => p.date.split(" ").pop())),
-  ].sort();
+  const departments = useMemo(
+    () => [...new Set(dummyResearch.map((p) => p.department))],
+    [],
+  );
 
-  const filteredResearch = dummyResearch.filter((paper) => {
-    const matchesDepartment =
-      filters.department === "All departments" ||
-      paper.department === filters.department;
+  const years = useMemo(
+    () =>
+      [...new Set(dummyResearch.map((p) => p.date.split(" ").pop()))].sort(),
+    [],
+  );
 
-    const paperYear = paper.date.split(" ").pop();
-    const matchesYear =
-      filters.year === "All year" || paperYear === filters.year;
+  const filteredResearch = useMemo(() => {
+    const lowerSearch = search.toLowerCase();
 
-    const matchesSearch =
-      paper.title.toLowerCase().includes(search.toLowerCase()) ||
-      paper.author.toLowerCase().includes(search.toLowerCase()) ||
-      paper.department.toLowerCase().includes(search.toLowerCase()) ||
-      paper.abstract.toLowerCase().includes(search.toLowerCase());
+    return dummyResearch.filter((paper) => {
+      const paperYear = paper.date.split(" ").pop();
 
-    return matchesDepartment && matchesYear && matchesSearch;
-  });
+      const matchesDepartment =
+        filters.department === "All departments" ||
+        paper.department === filters.department;
+
+      const matchesYear =
+        filters.year === "All year" || paperYear === filters.year;
+
+      const matchesSearch =
+        paper.title.toLowerCase().includes(lowerSearch) ||
+        paper.author.toLowerCase().includes(lowerSearch) ||
+        paper.department.toLowerCase().includes(lowerSearch) ||
+        paper.abstract.toLowerCase().includes(lowerSearch);
+
+      return matchesDepartment && matchesYear && matchesSearch;
+    });
+  }, [filters, search]);
 
   const totalPages = Math.max(
     1,
-    Math.ceil(filteredResearch.length / itemsPerPage),
-  );
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const paginatedResearch = filteredResearch.slice(
-    startIndex,
-    startIndex + itemsPerPage,
+    Math.ceil(filteredResearch.length / ITEMS_PER_PAGE),
   );
 
-  const handleNext = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
+  const paginatedResearch = useMemo(() => {
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    return filteredResearch.slice(start, start + ITEMS_PER_PAGE);
+  }, [filteredResearch, currentPage]);
 
-  const handlePrevious = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
+  const handlePageChange = (direction) => {
+    setCurrentPage((prev) => {
+      if (direction === "next" && prev < totalPages) return prev + 1;
+      if (direction === "prev" && prev > 1) return prev - 1;
+      return prev;
+    });
   };
 
   return (
@@ -80,7 +84,7 @@ function HomePage() {
       className={style.page}
       style={{ paddingTop: menuOpen ? "200px" : "100px" }}
     >
-      <Header menuOpen={menuOpen} toggleMenu={toggleMenu} />
+      <Header menuOpen={menuOpen} toggleMenu={() => setMenuOpen((v) => !v)} />
 
       <section className={style.heroSection}>
         <h1 className={style.header}>Discover Academic Research</h1>
@@ -94,7 +98,7 @@ function HomePage() {
       <section className={style.searchSection}>
         <TextField
           className={style.textField}
-          placeholder={"Search research paper"}
+          placeholder="Search research paper"
           icon={<Search size={20} />}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -102,21 +106,14 @@ function HomePage() {
         <FilterResearch
           departments={departments}
           years={years}
-          onFilter={(selected) => setFilters(selected)}
+          onFilter={setFilters}
         />
       </section>
 
       <section className={style.researchSection}>
         {paginatedResearch.length > 0 ? (
           paginatedResearch.map((paper) => (
-            <ResearchCard
-              key={paper.id}
-              title={paper.title}
-              author={paper.author}
-              date={paper.date}
-              department={paper.department}
-              abstract={paper.abstract}
-            />
+            <ResearchCard key={paper.id} {...paper} />
           ))
         ) : (
           <p>No research paper found!</p>
@@ -127,19 +124,21 @@ function HomePage() {
         <section className={style.paginationSection}>
           <Button
             className={style.paginationButton}
-            onClick={handlePrevious}
+            onClick={() => handlePageChange("prev")}
             disabled={currentPage === 1}
             aria-label="Previous page"
           >
             <ChevronLeft size={18} />
             Previous
           </Button>
+
           <span className={style.pageInfo}>
             Page {currentPage} of {totalPages}
           </span>
+
           <Button
             className={style.paginationButton}
-            onClick={handleNext}
+            onClick={() => handlePageChange("next")}
             disabled={currentPage === totalPages}
             aria-label="Next page"
           >
