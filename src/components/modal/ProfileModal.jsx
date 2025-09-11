@@ -4,7 +4,6 @@ import { X, Download } from "lucide-react";
 import Button from "../button/Button";
 
 function ProfileModal({ onClose, isOpen }) {
-  // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -13,10 +12,9 @@ function ProfileModal({ onClose, isOpen }) {
       document.body.style.overflow = "auto";
     };
   }, [isOpen]);
-
   if (!isOpen) return null;
 
-  const requests = [
+  const requestPdf = [
     {
       id: 1,
       title: "Quantum Computing in Cryptography",
@@ -71,7 +69,7 @@ function ProfileModal({ onClose, isOpen }) {
             </tr>
           </thead>
           <tbody>
-            {requests.map((req) => (
+            {requestPdf.map((req) => (
               <tr key={req.id}>
                 <td data-label="Paper title">{req.title}</td>
                 <td data-label="Status">{req.status}</td>
