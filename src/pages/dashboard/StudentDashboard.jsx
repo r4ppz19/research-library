@@ -4,7 +4,7 @@ import style from "./StudentDashboard.module.css";
 import Header from "../../components/header/Header";
 import TextField from "../../components/form/TextField";
 import ResearchCard from "../../components/card/ResearchCard";
-import FilterButton from "../../components/filter/FilterButton";
+import DropdownFilterButton from "../../components/filter/DropdownFilterButton";
 import dummyResearch from "../../dummy/dummy-research";
 import Button from "../../components/button/Button";
 
@@ -80,74 +80,76 @@ function HomePage() {
   };
 
   return (
-    <main
+    <div
       className={style.page}
       style={{ paddingTop: menuOpen ? "200px" : "100px" }}
     >
       <Header menuOpen={menuOpen} toggleMenu={() => setMenuOpen((v) => !v)} />
 
-      <section className={style.heroSection}>
-        <h1 className={style.header}>Discover Academic Research</h1>
-        <p className={style.text}>
-          Explore a collection of student and faculty research papers, spanning
-          multiple departments and years. Search, filter, and access innovative
-          work that pushes the boundaries of knowledge.
-        </p>
-      </section>
-
-      <section className={style.searchSection}>
-        <TextField
-          className={style.textField}
-          placeholder="Search research paper"
-          icon={<Search size={20} />}
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <FilterButton
-          departments={departments}
-          years={years}
-          onFilter={setFilters}
-        />
-      </section>
-
-      <section className={style.researchSection}>
-        {paginatedResearch.length > 0 ? (
-          paginatedResearch.map((paper) => (
-            <ResearchCard key={paper.id} {...paper} />
-          ))
-        ) : (
-          <p>No research paper found!</p>
-        )}
-      </section>
-
-      {totalPages > 1 && (
-        <section className={style.paginationSection}>
-          <Button
-            className={style.paginationButton}
-            onClick={() => handlePageChange("prev")}
-            disabled={currentPage === 1}
-            aria-label="Previous page"
-          >
-            <ChevronLeft size={18} />
-            Previous
-          </Button>
-
-          <span className={style.pageInfo}>
-            Page {currentPage} of {totalPages}
-          </span>
-
-          <Button
-            className={style.paginationButton}
-            onClick={() => handlePageChange("next")}
-            disabled={currentPage === totalPages}
-            aria-label="Next page"
-          >
-            Next
-            <ChevronRight size={18} />
-          </Button>
+      <main className={style.main}>
+        <section className={style.heroSection}>
+          <h1 className={style.header}>Discover Academic Research</h1>
+          <p className={style.text}>
+            Explore a collection of student and faculty research papers,
+            spanning multiple departments and years. Search, filter, and access
+            innovative work that pushes the boundaries of knowledge.
+          </p>
         </section>
-      )}
-    </main>
+
+        <section className={style.searchSection}>
+          <TextField
+            className={style.textField}
+            placeholder="Search research paper"
+            icon={<Search size={20} />}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <DropdownFilterButton
+            departments={departments}
+            years={years}
+            onFilter={setFilters}
+          />
+        </section>
+
+        <section className={style.researchSection}>
+          {paginatedResearch.length > 0 ? (
+            paginatedResearch.map((paper) => (
+              <ResearchCard key={paper.id} {...paper} />
+            ))
+          ) : (
+            <p>No research paper found!</p>
+          )}
+        </section>
+
+        {totalPages > 1 && (
+          <section className={style.paginationSection}>
+            <Button
+              className={style.paginationButton}
+              onClick={() => handlePageChange("prev")}
+              disabled={currentPage === 1}
+              aria-label="Previous page"
+            >
+              <ChevronLeft size={18} />
+              Previous
+            </Button>
+
+            <span className={style.pageInfo}>
+              Page {currentPage} of {totalPages}
+            </span>
+
+            <Button
+              className={style.paginationButton}
+              onClick={() => handlePageChange("next")}
+              disabled={currentPage === totalPages}
+              aria-label="Next page"
+            >
+              Next
+              <ChevronRight size={18} />
+            </Button>
+          </section>
+        )}
+      </main>
+    </div>
   );
 }
 

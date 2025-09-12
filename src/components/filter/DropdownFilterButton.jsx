@@ -1,12 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react"; // Added useRef and useEffect
 import { ChevronDown } from "lucide-react";
-import style from "./FilterButton.module.css";
+import style from "./DropdownFilterButton.module.css";
 import Button from "../button/Button";
 
-function FilterButton({ departments, years, onFilter }) {
+function DropdownFilterButton({ departments, years, onFilter }) {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [selectedDept, setSelectedDept] = useState("All departments");
   const [selectedYear, setSelectedYear] = useState("All year");
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        setOpenDropdown(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const handleDeptSelect = (dept) => {
     setSelectedDept(dept);
@@ -29,7 +40,7 @@ function FilterButton({ departments, years, onFilter }) {
   };
 
   return (
-    <div className={style.filterSection}>
+    <div className={style.filterSection} ref={wrapperRef}>
       {/* Department Filter */}
       <div className={style.departmentWrapper}>
         <Button onClick={toggleDeptDropdown} className={style.filterButton}>
@@ -48,7 +59,6 @@ function FilterButton({ departments, years, onFilter }) {
           </ul>
         )}
       </div>
-
       {/* Year Filter */}
       <div className={style.yearWrapper}>
         <Button onClick={toggleYearDropdown} className={style.filterButton}>
@@ -69,4 +79,4 @@ function FilterButton({ departments, years, onFilter }) {
   );
 }
 
-export default FilterButton;
+export default DropdownFilterButton;
