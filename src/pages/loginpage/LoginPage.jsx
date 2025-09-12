@@ -1,7 +1,7 @@
 import { useState } from "react";
 import style from "./LoginPage.module.css";
 import LoginForm from "../../components/form/LoginForm";
-import SchoolLogo from "../../assets/school-logo.svg";
+import SchoolLogo from "/school-logo.svg";
 
 function LoginPage() {
   const [loginMode, setLoginMode] = useState("admin");
@@ -16,10 +16,13 @@ function LoginPage() {
         <div className={style.introCard}>
           <img className={style.logo} src={SchoolLogo} alt="acd-logo" />
           <div className={style.textContainer}>
-            <h1 className={style.title}>Assumption Research Library</h1>
+            <h1 className={style.title}>
+              Assumption Collage of Davao Research Library
+            </h1>
             <p className={style.description}>
-              A digital library of research and innovations from our faculty and
-              students.
+              Explore research from students and faculty from groundbreaking
+              studies to fresh ideas. Discover and connect with academic work
+              that matters.
             </p>
           </div>
         </div>
