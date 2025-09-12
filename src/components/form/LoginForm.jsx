@@ -5,14 +5,18 @@ import style from "./LoginForm.module.css";
 import TextField from "./TextField";
 import Button from "../button/Button";
 
-function LoginForm() {
+function LoginForm({ loginMode }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/student/dashboard");
+    if (loginMode === "admin") {
+      navigate("/admin/dashboard");
+    } else {
+      navigate("/student/dashboard");
+    }
   };
 
   return (
