@@ -2,13 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
-  border-bottom: 1px solid var(--border-default);
+  padding: 8px 20px;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1001;
+  border-bottom: 1px solid var(--border-default);
   background-color: var(--color-bg);
 }
 
@@ -21,11 +21,11 @@
 
 .title {
   color: var(--color-text);
-  font-size: var(--font-size-h4);
+  font-size: var(--font-size-h3);
 }
 
 .logo {
-  width: 50px;
+  width: 40px;
   height: auto;
 }
 
@@ -51,11 +51,7 @@
   gap: 5px;
 }
 
-.accountButtonDesktop {
-  display: none;
-}
-
-.logoutButton {
+.buttonDesktop {
   display: none;
 }
 
@@ -67,11 +63,11 @@
   top: 100%;
   left: 0;
   width: 100%;
+  padding: 20px 20px;
+  z-index: 1000;
   background-color: var(--color-bg);
   border-bottom: 1px solid var(--border-default);
   border-top: 1px solid var(--border-default);
-  padding: 20px 20px;
-  z-index: 1000;
   color: var(--color-text);
   font-size: var(--font-size-body);
 }
@@ -81,11 +77,11 @@
   flex-direction: row;
   gap: 5px;
   border-radius: 7px;
-  border: 0.5px solid var(--border-default);
   padding: 5px 10px;
+  width: fit-content;
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-medium);
-  width: fit-content;
+  border: 0.5px solid var(--border-default);
 }
 
 @media (min-width: 768px) {
@@ -97,23 +93,13 @@
     display: none;
   }
 
-  .accountButtonDesktop {
+  .buttonDesktop {
     display: flex;
     flex-direction: row;
     gap: 5px;
     border: 0.5px solid var(--border-default);
-    padding: 6px 15px;
-    font-size: var(--font-size-small);
-    font-weight: var(--font-weight-medium);
-  }
-
-  .logoutButton {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    border: 0.5px solid var(--border-default);
-    padding: 6px 15px;
-    font-size: var(--font-size-small);
+    padding: 7px 10px;
+    font-size: var(--font-size-caption);
     font-weight: var(--font-weight-medium);
   }
 }

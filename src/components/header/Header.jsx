@@ -7,7 +7,7 @@ import Button from "../button/Button";
 import ProfileModal from "../modal/ProfileModal";
 import student from "../../dummy/student";
 
-function Header({ menuOpen, toggleMenu }) {
+function Header({ isMenuOpen, toggleMenu }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const navigate = useNavigate();
@@ -21,28 +21,25 @@ function Header({ menuOpen, toggleMenu }) {
     <header className={style.header}>
       <div className={style.titleContainer}>
         <img className={style.logo} src={SchoolLogo} alt="school-logo" />
-        <h1 className={style.title}>Research Repository</h1>
+        <h1 className={style.title}>Research Library</h1>
       </div>
 
       <div className={style.actionContainer}>
-        <Button
-          className={style.accountButtonDesktop}
-          onClick={() => setIsOpen(true)}
-        >
+        <Button className={style.buttonDesktop} onClick={() => setIsOpen(true)}>
           <CircleUser size={16} />
           Account
         </Button>
-        <Button className={style.logoutButton} onClick={handleLogout}>
+        <Button className={style.buttonDesktop} onClick={handleLogout}>
           <LogOut size={16} />
           Log-out
         </Button>
       </div>
 
       <button className={style.menuButton} onClick={toggleMenu}>
-        {menuOpen ? <X size={20} /> : <Menu size={20} />}
+        {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
       </button>
 
-      {menuOpen && (
+      {isMenuOpen && (
         <div className={style.dropdownMenu}>
           <Button
             className={style.buttonMobile}

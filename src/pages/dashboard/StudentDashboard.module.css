@@ -8,6 +8,14 @@
   gap: 20px;
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
 .heroSection {
   display: flex;
   flex-direction: column;
@@ -17,15 +25,15 @@
   gap: 10px;
 }
 
-.header {
+.heroHeader {
   color: var(--color-text);
-  font-size: var(--font-size-h2);
+  font-size: var(--font-size-h1);
   font-weight: var(--font-weight-bold);
 }
 
-.text {
+.heroText {
   color: var(--color-text);
-  font-size: var(--font-size-h4);
+  font-size: var(--font-size-h3);
   font-weight: var(--font-weight-regular);
   padding-bottom: 10px;
 }

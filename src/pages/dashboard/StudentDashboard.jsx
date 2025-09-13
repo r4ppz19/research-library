@@ -13,16 +13,15 @@ const DEFAULT_FILTERS = { department: "All departments", year: "All year" };
 
 function HomePage() {
   const [search, setSearch] = useState("");
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
   const [filters, setFilters] = useState(DEFAULT_FILTERS);
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Reset to page 1 whenever filters/search change
+  // Reset to page 1
   useEffect(() => {
     setCurrentPage(1);
   }, [filters, search]);
 
-  // Scroll to top on page change
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [currentPage]);
@@ -82,14 +81,17 @@ function HomePage() {
   return (
     <div
       className={style.page}
-      style={{ paddingTop: menuOpen ? "200px" : "100px" }}
+      style={{ paddingTop: isMenuOpen ? "200px" : "100px" }}
     >
-      <Header menuOpen={menuOpen} toggleMenu={() => setMenuOpen((v) => !v)} />
+      <Header
+        isMenuOpen={isMenuOpen}
+        toggleMenu={() => setMenuOpen((v) => !v)}
+      />
 
       <main className={style.main}>
         <section className={style.heroSection}>
-          <h1 className={style.header}>Discover Academic Research</h1>
-          <p className={style.text}>
+          <h1 className={style.heroHeader}>Discover Academic Research</h1>
+          <p className={style.heroText}>
             Explore a collection of student and faculty research papers,
             spanning multiple departments and years. Search, filter, and access
             innovative work that pushes the boundaries of knowledge.
