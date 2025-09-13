@@ -1,27 +1,11 @@
 import style from "./TextField.module.css";
+import clsx from "clsx";
 
-function TextField({
-  id,
-  value,
-  onChange,
-  placeholder,
-  icon,
-  type = "text",
-  className = "",
-  ...props
-}) {
+function TextField({ icon, className, ...props }) {
   return (
-    <div className={`${style.inputWrapper} ${className || ""}`}>
+    <div className={clsx(style.inputWrapper, className)}>
       {icon && <span className={style.icon}>{icon}</span>}
-      <input
-        className={style.input}
-        id={id}
-        type={type}
-        value={value}
-        onChange={onChange}
-        placeholder={placeholder}
-        {...props}
-      />
+      <input {...props} className={style.input} />
     </div>
   );
 }

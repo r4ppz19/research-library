@@ -8,8 +8,17 @@
   box-shadow: var(--shadow-sm);
 }
 
+.inputWrapper:hover {
+  border: 1px solid var(--input-hover-border);
+}
+
+.inputWrapper:active {
+  border: 1px solid var(--input-active-border);
+}
+
 .inputWrapper:focus-within {
   outline: 1px solid var(--input-focus-ring);
+  border: 1px solid var(--input-focus-border);
 }
 
 .icon {
