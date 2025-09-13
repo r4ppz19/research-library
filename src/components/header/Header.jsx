@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./Header.module.css";
-import { Menu, X, CircleUser, LogOut } from "lucide-react";
+import { Menu, X, CircleUser, LogOut, ToggleLeft } from "lucide-react";
 import SchoolLogo from "/school-logo.svg";
 import Button from "../button/Button";
 import ProfileModal from "../modal/ProfileModal";
@@ -9,8 +9,23 @@ import student from "../../dummy/student";
 
 function Header({ isMenuOpen, toggleMenu }) {
   const [isOpen, setIsOpen] = useState(false);
+  const headerRef = useRef(null);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        headerRef.current &&
+        !headerRef.current.contains(event.target) &&
+        isMenuOpen
+      ) {
+        toggleMenu();
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isMenuOpen, toggleMenu]);
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -18,7 +33,7 @@ function Header({ isMenuOpen, toggleMenu }) {
   };
 
   return (
-    <header className={style.header}>
+    <header className={style.header} ref={headerRef}>
       <div className={style.titleContainer}>
         <img className={style.logo} src={SchoolLogo} alt="school-logo" />
         <h1 className={style.title}>Research Library</h1>
