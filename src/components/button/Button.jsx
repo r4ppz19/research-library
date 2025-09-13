@@ -1,4 +1,5 @@
 import style from "./Button.module.css";
+import clsx from "clsx";
 
 function Button({
   type = "button",
@@ -10,7 +11,7 @@ function Button({
   return (
     <button
       type={type}
-      className={`${style.button} ${style[variant]} ${className}`}
+      className={clsx(style.button, style[variant], className)}
       {...props}
     >
       {children}
