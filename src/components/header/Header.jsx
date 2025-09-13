@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./Header.module.css";
-import { Menu, X, CircleUser, LogOut, ToggleLeft } from "lucide-react";
+import { Menu, X, CircleUser, LogOut } from "lucide-react";
 import SchoolLogo from "/school-logo.svg";
 import Button from "../button/Button";
 import ProfileModal from "../modal/ProfileModal";
@@ -10,7 +10,6 @@ import student from "../../dummy/student";
 function Header({ isMenuOpen, toggleMenu }) {
   const [isOpen, setIsOpen] = useState(false);
   const headerRef = useRef(null);
-
   const navigate = useNavigate();
 
   useEffect(() => {
