@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  border-bottom: 1px solid var(--border-default);
+  background-color: var(--color-bg);
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: var(--color-text);
+  font-family: var(--font-weight-bold);
+  font-size: var(--font-size-h2);
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.modeContainer {
+  padding: 3px 10px;
+  background: #dbeafe;
+  border-radius: 5px;
+}
+
+.mode {
+}

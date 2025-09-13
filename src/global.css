@@ -79,7 +79,7 @@
   --shadow-card: 0 8px 16px rgba(0, 0, 0, 0.1);
 
   /* ================= Typography ================= */
-  --font-family-base: "Roboto", system-ui, -apple-system, sans-serif;
+  --font-family-base: "Roboto", "Inter", system-ui, -apple-system, sans-serif;
 
   --font-weight-light: 300;
   --font-weight-regular: 400;

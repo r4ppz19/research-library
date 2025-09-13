@@ -1,10 +1,13 @@
 import style from "./AdminDashboard.module.css";
+import Header from "../../components/header/AdminHeader";
 
 function AdminDashboard() {
   return (
     <div className={style.page}>
-      <p>No admin yet ˙◠˙</p>
-      <p>Checkout student dashboard tho (°〇°)</p>
+      <Header />
+      <main>
+        <section></section>
+      </main>
     </div>
   );
 }

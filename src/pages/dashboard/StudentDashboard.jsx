@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import style from "./StudentDashboard.module.css";
-import Header from "../../components/header/Header";
+import Header from "../../components/header/StudentHeader";
 import TextField from "../../components/form/TextField";
 import ResearchCard from "../../components/card/ResearchCard";
 import DropdownFilterButton from "../../components/filter/DropdownFilterButton";
